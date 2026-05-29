@@ -139,20 +139,6 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:900;line-height:1.05;l
 .schedule-day{font-family:'Oswald',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);min-width:90px}
 .schedule-info{font-size:.9rem;color:var(--cream-dim)}
 
-/* ===== GALLERY ===== */
-.gallery-section{padding:100px 0;background:var(--dark);position:relative}
-.gallery-section::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--tan-dim),transparent)}
-.gallery-grid{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:280px 280px;gap:16px}
-.gallery-item{position:relative;border-radius:4px;overflow:hidden;cursor:pointer}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
-.gallery-item:hover img{transform:scale(1.06)}
-.gallery-item::after{content:"";position:absolute;inset:0;background:rgba(10,10,10,.25);transition:background .3s ease}
-.gallery-item:hover::after{background:transparent}
-.gallery-item:nth-child(1){grid-column:1/2;grid-row:1/3}
-.gallery-item:nth-child(2){grid-column:2/3}
-.gallery-item:nth-child(3){grid-column:3/4}
-.gallery-item:nth-child(4){grid-column:2/4}
-
 /* ===== REVIEWS ===== */
 .reviews-section{padding:100px 0}
 .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px}
@@ -229,11 +215,6 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:900;line-height:1.05;l
   .menu-grid{grid-template-columns:1fr}
   .music-grid{grid-template-columns:1fr;gap:40px}
   .music-visual img{height:340px}
-  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}
-  .gallery-item:nth-child(1){grid-column:1/3;grid-row:1}
-  .gallery-item:nth-child(2){grid-column:1;grid-row:2}
-  .gallery-item:nth-child(3){grid-column:2;grid-row:2}
-  .gallery-item:nth-child(4){grid-column:1/3;grid-row:3}
   .reviews-grid{grid-template-columns:1fr}
   .location-grid{grid-template-columns:1fr;gap:40px}
   .hiring-banner{flex-direction:column;text-align:center;padding:36px 24px}
@@ -246,15 +227,12 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:900;line-height:1.05;l
   .hero-buttons{flex-direction:column}
   .hero-buttons .btn{width:100%;justify-content:center}
   .about-features{grid-template-columns:1fr}
-  .gallery-grid{grid-template-columns:1fr;grid-template-rows:repeat(4,200px)}
-  .gallery-item:nth-child(1){grid-column:1;grid-row:1}
-  .gallery-item:nth-child(4){grid-column:1}
   .hiring-roles{flex-direction:column;align-items:center}
 }
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
   html{scroll-behavior:auto}
-  .menu-card,.gallery-item img,.menu-card-img img{transition:none}
+  .menu-card,.menu-card-img img{transition:none}
 }
 </style>
 </head>
@@ -270,7 +248,6 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:900;line-height:1.05;l
       <li><a href="#about">About</a></li>
       <li><a href="#menu">Menu</a></li>
       <li><a href="#music">Live Music</a></li>
-      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#location">Visit</a></li>
     </ul>
     <a href="tel:8435211888" class="nav-cta">Reserve a Table</a>
@@ -285,7 +262,6 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:900;line-height:1.05;l
   <a href="#about" class="mobile-link">About</a>
   <a href="#menu" class="mobile-link">Menu</a>
   <a href="#music" class="mobile-link">Live Music</a>
-  <a href="#gallery" class="mobile-link">Gallery</a>
   <a href="#location" class="mobile-link">Visit</a>
   <a href="tel:8435211888" class="btn btn-rust" style="margin-top:12px">Reserve a Table</a>
 </div>
@@ -372,27 +348,27 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:900;line-height:1.05;l
     </div>
     <div class="menu-grid">
       <div class="menu-card reveal">
-        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80" alt="Gourmet burger with fresh toppings" loading="lazy"></div>
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=600&q=80" alt="Shrimp burger with slaw on a brioche bun" loading="lazy"></div>
         <div class="menu-card-body"><h3>Shrimp Burger</h3><p>Fresh caught Lowcountry shrimp, seasoned and grilled, with house remoulade and crisp slaw.</p><div class="menu-card-price">Market Price</div></div>
       </div>
       <div class="menu-card reveal">
-        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1513185158878-8d8c2a2a3da3?w=600&q=80" alt="Crispy fried green tomato BLT sandwich" loading="lazy"></div>
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1619096252214-ef06c45683e3?w=600&q=80" alt="Stacked BLT sandwich with thick-cut bacon and tomato" loading="lazy"></div>
         <div class="menu-card-body"><h3>Fried Green Tomato BLT</h3><p>Southern-battered green tomatoes with thick-cut bacon, lettuce, and pimento cheese.</p><div class="menu-card-price">$14</div></div>
       </div>
       <div class="menu-card reveal">
-        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="French dip sandwich with au jus" loading="lazy"></div>
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=600&q=80" alt="Roast beef French dip sandwich with au jus" loading="lazy"></div>
         <div class="menu-card-body"><h3>French Dip</h3><p>Slow-roasted beef piled high on a toasted hoagie with house-made au jus for dipping.</p><div class="menu-card-price">$16</div></div>
       </div>
       <div class="menu-card reveal">
-        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&q=80" alt="Golden fried fish and chips" loading="lazy"></div>
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1576777647209-e8733d7b851d?w=600&q=80" alt="Beer-battered fish and chips with fries and tartar sauce" loading="lazy"></div>
         <div class="menu-card-body"><h3>Flounder Fish &amp; Chips</h3><p>Beer-battered local flounder with seasoned fries, coleslaw, and tartar sauce.</p><div class="menu-card-price">$18</div></div>
       </div>
       <div class="menu-card reveal">
-        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=600&q=80" alt="Crispy fried pickles with dipping sauce" loading="lazy"></div>
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=600&q=80" alt="Crispy fried pickle chips with ranch dipping sauce" loading="lazy"></div>
         <div class="menu-card-body"><h3>Fried Pickles</h3><p>Hand-breaded dill pickle chips served golden and crispy with ranch dipping sauce.</p><div class="menu-card-price">$10</div></div>
       </div>
       <div class="menu-card reveal">
-        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1582169296194-e4d644c48063?w=600&q=80" alt="Loaded nachos with toppings" loading="lazy"></div>
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?w=600&q=80" alt="Loaded nachos with queso jalapenos and sour cream" loading="lazy"></div>
         <div class="menu-card-body"><h3>Loaded Nachos</h3><p>House chips stacked with queso, pulled pork, jalapenos, sour cream, and fresh pico.</p><div class="menu-card-price">$14</div></div>
       </div>
     </div>
@@ -419,19 +395,6 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:900;line-height:1.05;l
         </div>
         <a href="#" class="btn btn-rust">See Events Calendar</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section class="gallery-section" id="gallery">
-  <div class="wrap">
-    <div class="section-header reveal"><h2>Life at Luther's</h2></div>
-    <div class="gallery-grid reveal">
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Restaurant interior with warm ambient lighting" loading="lazy"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80" alt="Craft cocktail with garnish" loading="lazy"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Beautifully plated food" loading="lazy"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80" alt="Outdoor waterfront dining at sunset" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -546,8 +509,7 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:900;line-height:1.05;l
         <li><a href="#about">About</a></li>
         <li><a href="#menu">Menu</a></li>
         <li><a href="#music">Live Music</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#location">Visit</a></li>
+          <li><a href="#location">Visit</a></li>
       </ul>
       <div class="footer-social">
         <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
