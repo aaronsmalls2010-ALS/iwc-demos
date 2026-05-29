@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luther's Rare & Well Done - Waterfront Restaurant & Bar | Beaufort, SC</title>
+<meta name="description" content="Beaufort's favorite waterfront destination for great food, ice-cold drinks, live music, and unforgettable views. 910 Bay Street, Beaufort, SC.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Luther's Rare & Well Done">
+<meta name="theme-color" content="#8b2020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Oswald:wght@300;400;500;600;700&family=Barlow:wght@300;400;500;600&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
+<style>
+:root{
+  --ink:#0a0a0a;--dark:#111;--dark-2:#181818;--dark-3:#202020;
+  --warm-gray:#2e2e2e;--muted:#555;
+  --cream:#f0e6d3;--cream-dim:#c4b69e;--cream-mute:#8a7d6b;
+  --rust:#8b2020;--rust-light:#a42828;--rust-dark:#6e1818;
+  --tan:#c9a96e;--tan-light:#dbc08a;--tan-dim:#a68b52;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font-family:'Barlow',sans-serif;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+/* film grain — fixed, pointer-events:none, GPU-composited */
+body::after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.04;mix-blend-mode:overlay;will-change:transform;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+::selection{background:var(--rust);color:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:900;line-height:1.05;letter-spacing:.01em}
+.fraktur{font-family:'UnifrakturCook',cursive}
+.eyebrow{font-family:'Oswald',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--rust)}
+
+/* Skip link */
+.skip-link{position:absolute;top:-100px;left:16px;background:var(--rust);color:#fff;padding:8px 16px;z-index:9999;font-family:'Oswald',sans-serif;font-size:.85rem;border-radius:0 0 4px 4px;transition:top .2s}
+.skip-link:focus{top:0}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.95rem;padding:15px 32px;border-radius:3px;cursor:pointer;border:none;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.btn:active{transform:scale(.97)}
+.btn-rust{background:var(--rust);color:#fff;box-shadow:0 8px 24px -8px rgba(139,32,32,.5)}
+.btn-rust:hover{background:var(--rust-light);transform:translateY(-2px);box-shadow:0 12px 32px -8px rgba(139,32,32,.6)}
+.btn-outline{background:transparent;border:1px solid var(--cream-mute);color:var(--cream)}
+.btn-outline:hover{border-color:var(--rust);color:var(--rust);transform:translateY(-2px)}
+
+/* ===== NAV ===== */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:72px;display:flex;align-items:center;transition:background .35s ease,box-shadow .35s ease}
+.site-header.scrolled{background:rgba(10,10,10,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.4)}
+.nav-inner{max-width:1200px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:'UnifrakturCook',cursive;font-size:1.6rem;color:var(--tan-light);letter-spacing:.02em}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-dim);transition:color .2s ease;position:relative}
+.nav-links a:hover{color:var(--rust)}
+.nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--rust);transition:width .25s ease}
+.nav-links a:hover::after{width:100%}
+.nav-cta{font-family:'Oswald',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;background:var(--rust);color:#fff;padding:10px 22px;border-radius:3px;transition:background .2s ease}
+.nav-cta:hover{background:var(--rust-light)}
+
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;z-index:110}
+.hamburger span{display:block;width:26px;height:2px;background:var(--cream);transition:transform .3s ease,opacity .3s ease}
+.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mobile menu — opacity+visibility, never display:none */
+.mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,10,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);z-index:105;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s ease,visibility .3s ease}
+.mobile-menu.open{opacity:1;visibility:visible;pointer-events:auto}
+.mobile-menu a{font-family:'Oswald',sans-serif;font-size:1.4rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--cream);transition:color .2s ease}
+.mobile-menu a:hover{color:var(--rust)}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100dvh;display:flex;align-items:center;padding-top:96px;padding-bottom:100px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,var(--ink) 0%,rgba(10,10,10,.75) 40%,rgba(10,10,10,.35) 65%,rgba(10,10,10,.55) 100%)}
+.hero-content{position:relative;z-index:2;max-width:700px}
+.hero-card{background:rgba(10,10,10,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(201,169,110,.18);border-radius:16px;padding:40px 44px}
+.hero-subtitle{font-family:'Oswald',sans-serif;font-weight:400;font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cream);margin-bottom:16px;opacity:.85}
+.hero h1{font-size:clamp(3rem,7vw,5.2rem);margin-bottom:20px;text-shadow:0 3px 20px rgba(0,0,0,.5)}
+.hero h1 .fraktur{display:block;font-size:1.15em;line-height:.95;margin-bottom:4px}
+.hero-tagline{font-size:1.15rem;color:var(--cream-dim);max-width:480px;margin-bottom:32px;line-height:1.7}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+
+.hero-info-bar{position:absolute;bottom:0;left:0;right:0;z-index:3;background:rgba(10,10,10,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(201,169,110,.25)}
+.hero-info-inner{max-width:1200px;margin:0 auto;padding:18px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.info-item{display:flex;align-items:center;gap:12px}
+.info-icon{width:40px;height:40px;border-radius:50%;background:var(--rust);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.info-icon svg{width:18px;height:18px;fill:#fff}
+.info-text{font-family:'Oswald',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--cream-dim);line-height:1.4}
+.info-text strong{display:block;color:var(--cream);font-size:.85rem}
+
+/* ===== ABOUT ===== */
+.about{padding:100px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-image{position:relative;border-radius:4px;overflow:hidden}
+.about-image img{width:100%;height:460px;object-fit:cover}
+.about-image::after{content:"";position:absolute;inset:0;border:1px solid rgba(201,169,110,.2);border-radius:4px;pointer-events:none}
+.about-badge{position:absolute;bottom:20px;right:20px;background:rgba(10,10,10,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(201,169,110,.25);border-radius:4px;padding:14px 20px;text-align:center}
+.about-badge .number{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--tan);line-height:1}
+.about-badge .label{font-family:'Oswald',sans-serif;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-dim);margin-top:4px}
+.about-text h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:24px}
+.about-text h2 .rust{color:var(--rust)}
+.about-text p{color:var(--cream-dim);font-size:1.02rem;margin-bottom:16px;max-width:520px}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.about-feat{display:flex;align-items:center;gap:10px;font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--cream-dim)}
+.about-feat svg{width:16px;height:16px;fill:var(--tan);flex-shrink:0}
+
+/* ===== MENU ===== */
+.menu-section{padding:100px 0;background:var(--dark);position:relative}
+.menu-section::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--tan-dim),transparent)}
+.section-header{text-align:center;margin-bottom:60px}
+.section-header h2{font-size:clamp(2rem,4vw,2.8rem);margin-top:12px}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.menu-card{position:relative;border-radius:4px;overflow:hidden;background:var(--dark-2);border:1px solid rgba(46,46,46,.8);transition:transform .3s ease,border-color .3s ease}
+.menu-card:hover{transform:translateY(-4px);border-color:var(--rust)}
+.menu-card-img{height:220px;overflow:hidden}
+.menu-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.menu-card:hover .menu-card-img img{transform:scale(1.05)}
+.menu-card-body{padding:20px}
+.menu-card-body h3{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;margin-bottom:6px}
+.menu-card-body p{font-size:.88rem;color:var(--cream-mute);line-height:1.5}
+.menu-card-price{font-family:'Oswald',sans-serif;font-weight:600;color:var(--tan);font-size:.9rem;margin-top:10px;letter-spacing:.04em}
+.menu-cta{text-align:center;margin-top:48px}
+
+/* ===== LIVE MUSIC ===== */
+.music-section{padding:100px 0;position:relative}
+.music-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
+.music-visual{position:relative;border-radius:4px;overflow:hidden}
+.music-visual img{width:100%;height:500px;object-fit:cover}
+.music-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.5) 0%,transparent 50%)}
+.music-badge{position:absolute;bottom:24px;left:24px;z-index:2;background:var(--rust);padding:10px 20px;border-radius:3px;font-family:'Oswald',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+.music-content h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:20px}
+.music-content p{color:var(--cream-dim);font-size:1.02rem;margin-bottom:24px;max-width:460px;line-height:1.7}
+.music-schedule{display:flex;flex-direction:column;gap:14px;margin-bottom:32px}
+.schedule-item{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--dark-2);border-radius:4px;border-left:3px solid var(--tan)}
+.schedule-day{font-family:'Oswald',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);min-width:90px}
+.schedule-info{font-size:.9rem;color:var(--cream-dim)}
+
+/* ===== GALLERY ===== */
+.gallery-section{padding:100px 0;background:var(--dark);position:relative}
+.gallery-section::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--tan-dim),transparent)}
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:280px 280px;gap:16px}
+.gallery-item{position:relative;border-radius:4px;overflow:hidden;cursor:pointer}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-item::after{content:"";position:absolute;inset:0;background:rgba(10,10,10,.25);transition:background .3s ease}
+.gallery-item:hover::after{background:transparent}
+.gallery-item:nth-child(1){grid-column:1/2;grid-row:1/3}
+.gallery-item:nth-child(2){grid-column:2/3}
+.gallery-item:nth-child(3){grid-column:3/4}
+.gallery-item:nth-child(4){grid-column:2/4}
+
+/* ===== REVIEWS ===== */
+.reviews-section{padding:100px 0}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px}
+.review-card{background:var(--dark-2);border:1px solid rgba(46,46,46,.8);border-radius:4px;padding:28px}
+.review-stars{display:flex;gap:3px;margin-bottom:14px}
+.review-stars svg{width:16px;height:16px;fill:var(--tan)}
+.review-text{font-size:.95rem;color:var(--cream-dim);line-height:1.65;margin-bottom:18px;font-style:italic}
+.review-author{font-family:'Oswald',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--cream-mute)}
+
+/* ===== HOURS & LOCATION ===== */
+.location-section{padding:100px 0;background:var(--dark);position:relative}
+.location-section::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--tan-dim),transparent)}
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.hours-card{background:var(--dark-2);border:1px solid rgba(46,46,46,.8);border-radius:4px;padding:36px}
+.hours-card h3{font-size:1.6rem;margin-bottom:24px}
+.hours-list{display:flex;flex-direction:column;gap:14px}
+.hours-row{display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:1px solid rgba(46,46,46,.6)}
+.hours-row:last-child{border-bottom:none;padding-bottom:0}
+.hours-day{font-family:'Oswald',sans-serif;font-weight:500;font-size:.88rem;letter-spacing:.06em;text-transform:uppercase;color:var(--cream)}
+.hours-time{font-size:.9rem;color:var(--cream-dim)}
+.location-info h3{font-size:1.6rem;margin-bottom:24px}
+.location-address{display:flex;flex-direction:column;gap:18px;margin-bottom:28px}
+.addr-item{display:flex;align-items:flex-start;gap:14px}
+.addr-icon{width:36px;height:36px;border-radius:50%;background:rgba(139,32,32,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.addr-icon svg{width:16px;height:16px;fill:var(--rust)}
+.addr-text{font-size:.95rem;color:var(--cream-dim);line-height:1.5}
+.addr-text strong{color:var(--cream);display:block;font-family:'Oswald',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
+.map-embed{border-radius:4px;overflow:hidden;border:1px solid rgba(46,46,46,.6);margin-top:24px;height:200px;background:var(--dark-3);display:flex;align-items:center;justify-content:center}
+.map-embed a{font-family:'Oswald',sans-serif;font-size:.85rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);transition:color .2s ease}
+.map-embed a:hover{color:var(--rust-light)}
+
+/* ===== HIRING ===== */
+.hiring-section{padding:80px 0}
+.hiring-banner{background:linear-gradient(135deg,var(--dark-2),var(--dark-3));border:1px solid rgba(46,46,46,.8);border-radius:4px;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.hiring-text h3{font-size:1.8rem;margin-bottom:8px}
+.hiring-text h3 .rust{color:var(--rust)}
+.hiring-text p{color:var(--cream-dim);font-size:1rem;max-width:480px}
+.hiring-roles{display:flex;gap:16px;margin-top:18px}
+.role-tag{font-family:'Oswald',sans-serif;font-weight:500;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;padding:8px 18px;border:1px solid var(--rust);color:var(--rust);border-radius:3px}
+
+/* ===== FOOTER ===== */
+.site-footer{padding:48px 0 28px;border-top:1px solid var(--tan-dim)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.footer-brand{font-family:'UnifrakturCook',cursive;font-size:1.4rem;color:var(--tan-light)}
+.footer-brand span{display:block;font-family:'Oswald',sans-serif;font-size:.65rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-mute);margin-top:2px}
+.footer-links{display:flex;gap:28px;list-style:none}
+.footer-links a{font-family:'Oswald',sans-serif;font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-mute);transition:color .2s ease}
+.footer-links a:hover{color:var(--rust)}
+.footer-social{display:flex;gap:14px}
+.footer-social a{width:36px;height:36px;border-radius:50%;border:1px solid var(--warm-gray);display:flex;align-items:center;justify-content:center;transition:border-color .2s ease,background .2s ease}
+.footer-social a:hover{border-color:var(--rust);background:rgba(139,32,32,.15)}
+.footer-social svg{width:15px;height:15px;fill:var(--cream-dim)}
+.footer-bottom{text-align:center;margin-top:32px;padding-top:20px;border-top:1px solid rgba(46,46,46,.4);font-size:.75rem;color:var(--cream-mute)}
+.footer-bottom a{color:var(--rust)}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .hero-info-inner{grid-template-columns:1fr 1fr;gap:16px}
+}
+@media(max-width:768px){
+  .hero{min-height:100dvh;padding-bottom:120px}
+  .hero-content{padding-top:100px}
+  .hero-card{padding:28px 24px;border-radius:12px}
+  .hero h1{font-size:2.6rem}
+  .hero-info-inner{grid-template-columns:1fr;gap:12px;padding:14px 24px}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .about-image img{height:320px}
+  .menu-grid{grid-template-columns:1fr}
+  .music-grid{grid-template-columns:1fr;gap:40px}
+  .music-visual img{height:340px}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}
+  .gallery-item:nth-child(1){grid-column:1/3;grid-row:1}
+  .gallery-item:nth-child(2){grid-column:1;grid-row:2}
+  .gallery-item:nth-child(3){grid-column:2;grid-row:2}
+  .gallery-item:nth-child(4){grid-column:1/3;grid-row:3}
+  .reviews-grid{grid-template-columns:1fr}
+  .location-grid{grid-template-columns:1fr;gap:40px}
+  .hiring-banner{flex-direction:column;text-align:center;padding:36px 24px}
+  .hiring-roles{justify-content:center;flex-wrap:wrap}
+  .footer-inner{flex-direction:column;text-align:center}
+  .footer-links{flex-wrap:wrap;justify-content:center}
+}
+@media(max-width:480px){
+  .hero h1{font-size:2.2rem}
+  .hero-buttons{flex-direction:column}
+  .hero-buttons .btn{width:100%;justify-content:center}
+  .about-features{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr;grid-template-rows:repeat(4,200px)}
+  .gallery-item:nth-child(1){grid-column:1;grid-row:1}
+  .gallery-item:nth-child(4){grid-column:1}
+  .hiring-roles{flex-direction:column;align-items:center}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .menu-card,.gallery-item img,.menu-card-img img{transition:none}
+}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- NAV -->
+<header class="site-header" id="siteHeader">
+  <nav class="nav-inner" aria-label="Main navigation">
+    <a href="#" class="nav-brand">Luther's</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#music">Live Music</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#location">Visit</a></li>
+    </ul>
+    <a href="tel:8435211888" class="nav-cta">Reserve a Table</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#menu" class="mobile-link">Menu</a>
+  <a href="#music" class="mobile-link">Live Music</a>
+  <a href="#gallery" class="mobile-link">Gallery</a>
+  <a href="#location" class="mobile-link">Visit</a>
+  <a href="tel:8435211888" class="btn btn-rust" style="margin-top:12px">Reserve a Table</a>
+</div>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1920&q=80" alt="Waterfront restaurant at dusk with warm lighting" loading="eager" fetchpriority="high">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="wrap hero-content">
+    <div class="hero-card">
+      <div class="hero-subtitle">Beaufort, SC - Est. on the Waterfront</div>
+      <h1>
+        <span class="fraktur">Luther's</span>
+        Rare &amp; Well Done
+      </h1>
+      <p class="hero-tagline">Beaufort's favorite waterfront destination for great food, ice-cold drinks, and unforgettable views on Bay Street.</p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-rust">View Menu</a>
+        <a href="tel:8435211888" class="btn btn-outline">Reserve a Table</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-info-bar">
+    <div class="hero-info-inner">
+      <div class="info-item">
+        <div class="info-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <div class="info-text"><strong>910 Bay Street</strong>Beaufort, SC 29902</div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+        <div class="info-text"><strong>Mon - Thu: 12PM - 1AM</strong>Fri - Sat: 12PM - 2AM</div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+        <div class="info-text"><strong>(843) 521-1888</strong>Call for reservations</div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg></div>
+        <div class="info-text"><strong>Live Music</strong>Thu - Sat Nights</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid reveal">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" alt="Warm interior of a waterfront bar with vintage decor" loading="lazy">
+        <div class="about-badge">
+          <div class="number">784</div>
+          <div class="label">Google Reviews</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="eyebrow">Our Story</span>
+        <h2>A Beaufort<br><span class="rust">Waterfront</span> Institution</h2>
+        <p>Housed in the historic Luther's Pharmacy building on Bay Street, Luther's Rare &amp; Well Done has become the heart of Beaufort's waterfront scene. From locals grabbing lunch to visitors winding down after a day on the water, everyone finds their spot here.</p>
+        <p>Great food, cold drinks, live music, and views that never get old. That's the Luther's way.</p>
+        <div class="about-features">
+          <div class="about-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Waterfront Patio</div>
+          <div class="about-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Pet Friendly</div>
+          <div class="about-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Live Music</div>
+          <div class="about-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Full Bar</div>
+          <div class="about-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Dine-In &amp; Takeout</div>
+          <div class="about-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Private Events</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <span class="eyebrow">From the Kitchen</span>
+      <h2>Fan Favorites</h2>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card reveal">
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80" alt="Gourmet burger with fresh toppings" loading="lazy"></div>
+        <div class="menu-card-body"><h3>Shrimp Burger</h3><p>Fresh caught Lowcountry shrimp, seasoned and grilled, with house remoulade and crisp slaw.</p><div class="menu-card-price">Market Price</div></div>
+      </div>
+      <div class="menu-card reveal">
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1513185158878-8d8c2a2a3da3?w=600&q=80" alt="Crispy fried green tomato BLT sandwich" loading="lazy"></div>
+        <div class="menu-card-body"><h3>Fried Green Tomato BLT</h3><p>Southern-battered green tomatoes with thick-cut bacon, lettuce, and pimento cheese.</p><div class="menu-card-price">$14</div></div>
+      </div>
+      <div class="menu-card reveal">
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="French dip sandwich with au jus" loading="lazy"></div>
+        <div class="menu-card-body"><h3>French Dip</h3><p>Slow-roasted beef piled high on a toasted hoagie with house-made au jus for dipping.</p><div class="menu-card-price">$16</div></div>
+      </div>
+      <div class="menu-card reveal">
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&q=80" alt="Golden fried fish and chips" loading="lazy"></div>
+        <div class="menu-card-body"><h3>Flounder Fish &amp; Chips</h3><p>Beer-battered local flounder with seasoned fries, coleslaw, and tartar sauce.</p><div class="menu-card-price">$18</div></div>
+      </div>
+      <div class="menu-card reveal">
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=600&q=80" alt="Crispy fried pickles with dipping sauce" loading="lazy"></div>
+        <div class="menu-card-body"><h3>Fried Pickles</h3><p>Hand-breaded dill pickle chips served golden and crispy with ranch dipping sauce.</p><div class="menu-card-price">$10</div></div>
+      </div>
+      <div class="menu-card reveal">
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1582169296194-e4d644c48063?w=600&q=80" alt="Loaded nachos with toppings" loading="lazy"></div>
+        <div class="menu-card-body"><h3>Loaded Nachos</h3><p>House chips stacked with queso, pulled pork, jalapenos, sour cream, and fresh pico.</p><div class="menu-card-price">$14</div></div>
+      </div>
+    </div>
+    <div class="menu-cta reveal"><a href="#" class="btn btn-outline">View Full Menu</a></div>
+  </div>
+</section>
+
+<!-- LIVE MUSIC -->
+<section class="music-section" id="music">
+  <div class="wrap">
+    <div class="music-grid reveal">
+      <div class="music-visual">
+        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=900&q=80" alt="Live music performance at a waterfront bar" loading="lazy">
+        <div class="music-badge">Live Every Week</div>
+      </div>
+      <div class="music-content">
+        <span class="eyebrow">On Stage</span>
+        <h2>Live Music on the Water</h2>
+        <p>Nothing beats cold drinks and live music with the Beaufort River as your backdrop. Local and touring acts take our stage every week, from blues and rock to Lowcountry soul.</p>
+        <div class="music-schedule">
+          <div class="schedule-item"><span class="schedule-day">Thursday</span><span class="schedule-info">Open Mic Night, 7PM</span></div>
+          <div class="schedule-item"><span class="schedule-day">Friday</span><span class="schedule-info">Live Band, 7PM - 11PM</span></div>
+          <div class="schedule-item"><span class="schedule-day">Saturday</span><span class="schedule-info">Featured Artist, 7PM - 11PM</span></div>
+        </div>
+        <a href="#" class="btn btn-rust">See Events Calendar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="wrap">
+    <div class="section-header reveal"><h2>Life at Luther's</h2></div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Restaurant interior with warm ambient lighting" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80" alt="Craft cocktail with garnish" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Beautifully plated food" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80" alt="Outdoor waterfront dining at sunset" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="wrap">
+    <div class="section-header reveal"><h2>What Folks Are Saying</h2></div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <p class="review-text">"The shrimp burger was delicious, the waitress was kind and courteous, and the place felt lively and welcoming."</p>
+        <div class="review-author">Nathan D. - Google Review</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <p class="review-text">"Great drinks, great service, pet friendly patio and pet friendly staff too. We'll be back every time we're in Beaufort."</p>
+        <div class="review-author">Emiko K. - Google Review</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <p class="review-text">"Cool, historic spot. Food was affordable and tasty. The waterfront views from the patio are absolutely worth the visit."</p>
+        <div class="review-author">Emerald G. - Google Review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS & LOCATION -->
+<section class="location-section" id="location">
+  <div class="wrap">
+    <div class="location-grid reveal">
+      <div class="hours-card">
+        <h3>Hours</h3>
+        <div class="hours-list">
+          <div class="hours-row"><span class="hours-day">Monday - Thursday</span><span class="hours-time">12:00 PM - 1:00 AM</span></div>
+          <div class="hours-row"><span class="hours-day">Friday - Saturday</span><span class="hours-time">12:00 PM - 2:00 AM</span></div>
+          <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">12:00 PM - 9:00 PM</span></div>
+        </div>
+      </div>
+      <div class="location-info">
+        <h3>Find Us</h3>
+        <address class="location-address">
+          <div class="addr-item">
+            <div class="addr-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            <div class="addr-text"><strong>Address</strong>910 Bay Street, Beaufort, SC 29902</div>
+          </div>
+          <div class="addr-item">
+            <div class="addr-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+            <div class="addr-text"><strong>Phone</strong>(843) 521-1888</div>
+          </div>
+          <div class="addr-item">
+            <div class="addr-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg></div>
+            <div class="addr-text"><strong>Parking</strong>Free street parking along Bay St</div>
+          </div>
+        </address>
+        <div class="map-embed">
+          <a href="https://maps.google.com/?q=910+Bay+Street+Beaufort+SC+29902" target="_blank" rel="noopener">Open in Google Maps &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIRING -->
+<section class="hiring-section">
+  <div class="wrap">
+    <div class="hiring-banner reveal">
+      <div class="hiring-text">
+        <h3>We're <span class="rust">Hiring</span></h3>
+        <p>Join the Luther's family. We're looking for great people to help us serve Beaufort's best waterfront experience.</p>
+        <div class="hiring-roles">
+          <span class="role-tag">Servers</span>
+          <span class="role-tag">Kitchen</span>
+          <span class="role-tag">Security</span>
+        </div>
+      </div>
+      <a href="tel:8435211888" class="btn btn-rust">Stop In to Apply</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        Luther's
+        <span>Rare &amp; Well Done - Beaufort, SC</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#music">Live Music</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#location">Visit</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      This mockup was custom-designed for Luther's Rare &amp; Well Done at no charge.<br>
+      Website concept by <a href="https://integritywebcreations.com" target="_blank" rel="noopener">Integrity Web Creations</a>
+    </div>
+  </div>
+</footer>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Luther's Rare & Well Done","image":"https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1200&q=80","url":"https://demo.integritywebcreations.com/Luthers/","telephone":"(843) 521-1888","servesCuisine":"American","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"910 Bay Street","addressLocality":"Beaufort","addressRegion":"SC","postalCode":"29902","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":32.4316,"longitude":-80.6698},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"12:00","closes":"01:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"12:00","closes":"02:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"12:00","closes":"21:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"3.8","reviewCount":"784"}}
+</script>
+
+<script>
+/* Critical: mobile nav + scroll reveal — wrapped per SRI safety standard */
+(function(){
+  'use strict';
+  var header = document.getElementById('siteHeader');
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileLinks = mobileMenu.querySelectorAll('a');
+
+  /* === MOBILE NAV (per mobile_nav_standard.md) === */
+  function closeMenu(){
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded','false');
+    hamburger.setAttribute('aria-label','Open menu');
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+  }
+
+  function openMenu(){
+    mobileMenu.classList.add('open');
+    hamburger.classList.add('active');
+    hamburger.setAttribute('aria-expanded','true');
+    hamburger.setAttribute('aria-label','Close menu');
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+  }
+
+  hamburger.addEventListener('click', function(){
+    if(mobileMenu.classList.contains('open')){closeMenu();}else{openMenu();}
+  });
+
+  for(var i=0;i<mobileLinks.length;i++){
+    mobileLinks[i].addEventListener('click', closeMenu);
+  }
+
+  /* Close on scroll */
+  window.addEventListener('scroll', function(){
+    if(mobileMenu.classList.contains('open')){closeMenu();}
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  }, {passive:true});
+
+  /* === SCROLL REVEAL (per SRI standard: wrapped in try-catch) === */
+  try{
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e,idx){
+          if(e.isIntersecting){
+            e.target.style.transitionDelay = (Math.min(idx,4)*60)+'ms';
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+      for(var j=0;j<els.length;j++){io.observe(els[j]);}
+    }else{
+      for(var k=0;k<els.length;k++){els[k].classList.add('in');}
+    }
+  }catch(e){
+    console.warn('Reveal animation unavailable:',e);
+    var fallback = document.querySelectorAll('.reveal');
+    for(var m=0;m<fallback.length;m++){fallback[m].classList.add('in');}
+  }
+})();
+</script>
+
+</body>
+</html>
