@@ -1212,6 +1212,129 @@ footer {
   .donut-chart-area { max-width: 300px; }
   .contact-map { height: 280px; }
 }
+
+/* ---- PRACTICE MODAL ---- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(5,12,7,0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal-box {
+  background: var(--navy);
+  border: 1px solid rgba(197,165,90,0.25);
+  border-radius: 12px;
+  padding: 52px 48px 40px;
+  max-width: 700px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(28px);
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+  box-shadow: 0 40px 80px -20px rgba(0,0,0,0.7);
+}
+.modal-overlay.open .modal-box { transform: translateY(0); }
+.modal-close {
+  position: absolute;
+  top: 18px; right: 18px;
+  width: 38px; height: 38px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--slate);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.2s, background 0.2s;
+}
+.modal-close:hover { border-color: var(--gold); background: rgba(197,165,90,0.1); }
+.modal-close svg { width: 15px; height: 15px; stroke: var(--ivory); }
+.modal-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+.modal-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gold-light);
+  margin-bottom: 28px;
+  line-height: 1.5;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(197,165,90,0.12);
+}
+.modal-body p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.modal-bullets {
+  list-style: none;
+  margin: 24px 0 32px;
+  padding: 22px 26px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(197,165,90,0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.modal-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: #FFFFFF;
+  line-height: 1.5;
+}
+.modal-bullets li::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+.modal-cta { width: 100%; justify-content: center; font-size: 0.88rem !important; }
+.legend-arrow {
+  margin-left: auto;
+  font-size: 1rem;
+  color: var(--gold-dim);
+  font-weight: 300;
+  transition: color 0.2s;
+}
+.legend-item:hover .legend-arrow,
+.legend-item.legend-active .legend-arrow { color: var(--gold); }
+@media (max-width: 768px) {
+  .modal-box { padding: 40px 24px 28px; }
+  .modal-title { font-size: 1.6rem; }
+}
 </style>
 </head>
 <body>
@@ -1389,19 +1512,125 @@ footer {
     </div>
   </div>
 </section>
+
+<!-- PRACTICE MODAL -->
+<div class="modal-overlay" id="practiceModal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="modal-tag">Practice Area</div>
+    <h2 class="modal-title" id="modalTitle"></h2>
+    <p class="modal-headline" id="modalHeadline"></p>
+    <div class="modal-body" id="modalBody"></div>
+    <ul class="modal-bullets" id="modalBullets"></ul>
+    <a href="#contact" class="btn btn-gold modal-cta" id="modalCta">Schedule a Consultation</a>
+  </div>
+</div>
+
 <script>
 (function() {
   var areas = [
-    { name: 'General Civil Litigation',  desc: 'Personal injury, automobile, construction, trucking, premises liability, and wrongful death with 20+ years of trial experience.', color: '#1C4228' },
-    { name: 'Commercial Litigation',     desc: 'Breach of contract and business tort disputes resolved through skilled negotiation, mediation, or trial representation.', color: '#16351F' },
-    { name: 'Personal Injury',           desc: 'Tenacious advocacy for injuries from vehicle accidents, slip-and-falls, defective products, and medical malpractice. You deserve an advocate, not just an attorney.', color: '#275632' },
-    { name: 'Insurance Coverage',        desc: 'Policy analysis, dispute negotiations, arbitrations, and trials across all insurance coverage matters in state and federal court.', color: '#0F2318' },
-    { name: 'Commercial Trucking',       desc: 'Defense of trucking companies and drivers in claims from property damage to catastrophic injury losses, with a focus on prelitigation management.', color: '#2A5538' },
-    { name: 'HOA / Community Law',       desc: 'Legal guidance for subdivisions, condominiums, and planned communities, helping boards anticipate and navigate complex governance issues.', color: '#1B3F28' },
-    { name: 'Construction Litigation',   desc: 'Construction defect claims through litigation, arbitration, mediation, and negotiation with technical expert coordination.', color: '#224D30' },
-    { name: 'Premises Liability',        desc: 'Defense of businesses and property owners against negligent security, slip-and-fall, and assault and battery claims.', color: '#122918' },
-    { name: 'Appellate Advocacy',        desc: 'Appeals in South Carolina courts, the U.S. Court of Appeals for the 4th Circuit, and the United States Supreme Court.', color: '#1E4429' },
-    { name: 'Mediation',                 desc: 'SC Certified Mediator retained by counsel on both sides, providing impartial expertise to reach practical, lasting resolutions.', color: '#2F683B' }
+    {
+      name: "General Civil Litigation",
+      headline: "When the stakes are high, experience is not optional.",
+      body: [
+        "Civil litigation is complex, adversarial, and unforgiving to those who come unprepared. Whether your case involves a car accident, a wrongful death, or a premises injury, the opposing side will have experienced legal counsel working to minimize your recovery or maximize your exposure. You deserve the same level of preparation and advocacy.",
+        "Mary Sharp has spent over 30 years handling civil litigation matters in South Carolina state and federal courts. Her AV Preeminent rating from Martindale-Hubbell - the highest peer recognition available - reflects what other attorneys already know: she is among the most capable civil litigators in the state. From pretrial strategy and discovery to mediation, arbitration, and courtroom trial, she brings the full range of litigation skills to every matter she handles.",
+        "The right attorney does not just react to the other side. The right attorney shapes the case from day one - building a strategy that puts you in the strongest possible position at every stage of the proceeding."
+      ],
+      bullets: ["30+ years of civil trial experience in SC state and federal courts", "AV Preeminent rated - the highest Martindale-Hubbell peer recognition", "Full-service representation from investigation through verdict", "Personal injury, wrongful death, trucking, premises, and construction matters"]
+    },
+    {
+      name: "Commercial Litigation",
+      headline: "A business dispute left unresolved is a threat to everything you have built.",
+      body: [
+        "Breach of contract claims, business tort disputes, and commercial disagreements can escalate quickly - draining resources, damaging relationships, and creating uncertainty that affects every aspect of your operation. Without skilled counsel, companies often settle for far less than they are owed, or spend far more than necessary in prolonged, unfocused litigation.",
+        "Sharp Law Firm brings a disciplined, strategic approach to commercial disputes. Mary Sharp evaluates every matter with your business objectives in mind, not just the legal outcome. She understands when aggressive litigation is the right answer and when a negotiated resolution better serves your long-term interests. Either way, you will be represented by someone who knows the law and knows how to use it.",
+        "Commercial opponents come prepared. When the other side has experienced legal counsel and you do not, the imbalance shows - in discovery, in negotiations, and at trial. Sharp Law Firm closes that gap."
+      ],
+      bullets: ["Breach of contract and business tort representation", "Strategic, cost-conscious dispute resolution", "Negotiation, mediation, and trial advocacy", "Representation for individuals, small businesses, and corporations"]
+    },
+    {
+      name: "Personal Injury",
+      headline: "You deserve an advocate - not just an attorney.",
+      body: [
+        "When you are injured because of someone else's negligence, the consequences can be immediate and lasting: medical bills, lost income, physical pain, and emotional distress. Insurance companies move fast in the aftermath of an accident - and they move in their own interest, not yours. Their adjusters are trained to limit payouts. Their attorneys are experienced at reducing or defeating claims entirely.",
+        "Mary Sharp has dedicated her career to making sure injured people are not left to navigate that process alone. She has represented clients injured in car and truck accidents, motorcycle collisions, slip-and-falls, dog attacks, defective product incidents, and medical negligence cases. She understands the physical and financial toll that serious injury takes on individuals and families - and she fights to make it right.",
+        "An AV Preeminent rated attorney does not accept lowball settlements or back down from insurance company pressure. When you hire Sharp Law Firm, you hire someone who will be heard - in negotiations and, if necessary, in court."
+      ],
+      bullets: ["Car, truck, and motorcycle accident claims", "Slip-and-fall and premises injury cases", "Defective products and medical malpractice", "Dog bites and animal attack injuries", "Wrongful death claims on behalf of surviving families"]
+    },
+    {
+      name: "Insurance Coverage",
+      headline: "Insurance companies have experienced lawyers protecting their interests. Do you?",
+      body: [
+        "Insurance policies are deliberately dense documents, filled with exclusions, conditions, and limitations that carriers routinely use to deny or limit coverage when claims arise. Whether you are a policyholder fighting a denied claim, a business disputing a coverage position, or an insured facing a bad faith situation, you are dealing with a sophisticated opponent that does this every day.",
+        "Mary Sharp has decades of experience in insurance coverage analysis and litigation. She knows how to read a policy the way insurance attorneys read it - and how to challenge the positions they take. She has represented clients in insurance disputes across state and federal courts, including mediations, arbitrations, and trials involving property, liability, and specialty coverage lines.",
+        "A denied claim or an adverse coverage position is not the end of the road. With the right counsel, it is the beginning of a fight you can win."
+      ],
+      bullets: ["Insurance policy analysis and coverage opinions", "Claim denial and bad faith disputes", "Policyholder and insured representation", "Mediation, arbitration, and trial in state and federal courts", "Property, liability, and specialty coverage matters"]
+    },
+    {
+      name: "Commercial Trucking",
+      headline: "Federal regulations, complex liability, and no margin for error.",
+      body: [
+        "Commercial trucking accidents are not like ordinary car accident cases. They involve federal motor carrier regulations, industry-specific standards of care, multiple potentially liable parties, and claims that can reach catastrophic levels. When a trucking company or driver is accused of causing serious injury or death, the legal exposure is enormous - and the investigation begins immediately.",
+        "Sharp Law Firm provides experienced defense for carriers and drivers facing claims that range from minor property damage to complex, multi-party litigation. Mary Sharp emphasizes early involvement: getting into a matter before litigation begins, preserving critical evidence, assessing exposure honestly, and building a defense strategy that holds up under the scrutiny that high-value trucking cases attract.",
+        "In commercial trucking defense, delay is costly and inexperience is dangerous. Sharp Law Firm provides neither."
+      ],
+      bullets: ["FMCSA and DOT regulatory compliance and defense", "Prelitigation investigation and evidence preservation", "Defense of carriers, drivers, and fleet operators", "Property damage through catastrophic and wrongful death claims", "Coordination with accident reconstruction and industry experts"]
+    },
+    {
+      name: "HOA / Community Law",
+      headline: "Community association boards carry real legal responsibility. Get ahead of it.",
+      body: [
+        "Homeowners associations, condominium associations, and planned communities face a growing range of legal issues that volunteer boards are rarely equipped to handle without professional guidance. Covenant enforcement disputes, assessment collection problems, contractor disagreements, and governance challenges can expose boards to personal liability and drain association reserves if not handled correctly.",
+        "Sharp Law Firm provides proactive, practical legal counsel to community associations throughout the Lowcountry. Mary Sharp helps boards understand their authority, enforce governing documents consistently, and resolve disputes before they escalate into expensive litigation. She also provides guidance on vendor contracts, rule amendments, and the complex issues that arise during developer transitions.",
+        "Associations that invest in qualified legal counsel resolve problems faster, spend less, and face fewer claims than those that wait until a dispute becomes a crisis. Proactive guidance from Sharp Law Firm is a sound investment in your community's future."
+      ],
+      bullets: ["Governing document interpretation and enforcement", "Assessment collection and lien proceedings", "Vendor, contractor, and developer disputes", "Board training and governance guidance", "Litigation when negotiation is not sufficient"]
+    },
+    {
+      name: "Construction Litigation",
+      headline: "Construction disputes are technically complex. Your attorney needs to understand both the law and the industry.",
+      body: [
+        "Construction defect claims, delay disputes, contract disagreements, and payment issues require legal counsel who does more than just know the law - they require someone who understands how construction projects work, what standards apply, and how to work effectively with engineers, architects, and technical experts to build a case that holds up under rigorous examination.",
+        "Mary Sharp has extensive experience handling construction disputes through litigation, arbitration, mediation, and negotiation. She represents owners, contractors, subcontractors, and design professionals in matters ranging from residential defect claims to large commercial project disputes. She coordinates expert witnesses, analyzes technical evidence, and builds legal strategies that address both the legal and technical dimensions of complex construction cases.",
+        "Construction disputes rarely get simpler with time. Early involvement by experienced counsel protects your rights, preserves critical evidence, and gives you the best chance of a resolution that reflects the true merits of your position."
+      ],
+      bullets: ["Construction defect and damage claims", "Payment disputes, liens, and bond claims", "Contract interpretation and breach of contract", "Delay, disruption, and impact claims", "Arbitration, mediation, and trial representation"]
+    },
+    {
+      name: "Premises Liability",
+      headline: "One incident on your property can become a significant legal and financial exposure.",
+      body: [
+        "Property owners and businesses can face substantial liability when someone claims to have been injured on their premises. Slip-and-fall cases, negligent security allegations, and assault claims can generate significant damages demands - and without vigorous, experienced defense, they can result in verdicts that seriously impact your business or personal finances.",
+        "Sharp Law Firm provides experienced defense for property owners, businesses, landlords, and managers facing premises liability claims. Mary Sharp understands the standard of care that applies in different settings - retail, commercial, residential, hospitality - and knows how to investigate claims thoroughly, challenge causation, and contest liability at every stage of the proceeding.",
+        "Not every injury on your property means you are legally responsible. But proving that requires an attorney who knows the law, knows the facts, and knows how to present both effectively. That is what Sharp Law Firm delivers."
+      ],
+      bullets: ["Slip-and-fall and trip-and-fall defense", "Negligent security and inadequate lighting claims", "Assault, battery, and third-party criminal act liability", "Retail, commercial, and residential property defense", "Expert coordination and thorough factual investigation"]
+    },
+    {
+      name: "Appellate Advocacy",
+      headline: "An unfavorable ruling is not always the final word.",
+      body: [
+        "Appellate practice is a specialized discipline that demands a different set of skills than trial work. Reversing an adverse verdict or preserving a favorable one requires the ability to identify reversible legal error, construct persuasive written arguments, and present those arguments clearly to courts that read hundreds of briefs and grant relief only when the record compels it.",
+        "Mary Sharp is admitted to practice before the South Carolina Court of Appeals, the South Carolina Supreme Court, the United States Court of Appeals for the Fourth Circuit, and the United States Supreme Court. She brings the analytical precision, deep knowledge of civil procedure and substantive law, and persuasive writing ability that appellate courts demand. Whether you need to challenge a trial court decision or defend a favorable outcome from appeal, she has the credentials and experience to represent you effectively.",
+        "Most trial attorneys do not handle appeals. It is a niche with few specialists and high stakes. Sharp Law Firm is among a select group of South Carolina civil litigators qualified and experienced to handle appeals at every level."
+      ],
+      bullets: ["South Carolina Court of Appeals and Supreme Court", "U.S. Court of Appeals for the Fourth Circuit", "United States Supreme Court admission and practice", "Post-trial motions and appeals from final judgments", "Appellate strategy from the moment an adverse ruling is entered"]
+    },
+    {
+      name: "Mediation",
+      headline: "The right neutral can resolve in one day what years of litigation cannot.",
+      body: [
+        "Litigation is expensive, time-consuming, and unpredictable. Juries are unpredictable. Judges are unpredictable. The only outcome that gives both sides control is a negotiated resolution - and achieving that requires a mediator with the experience, credibility, and professional skill to bridge the gap between positions that seem irreconcilable.",
+        "As a South Carolina Certified Mediator, Mary Sharp is retained by opposing counsel on both sides of disputes to facilitate productive, confidential conversations. Her three decades of civil litigation experience give her a unique advantage at the mediation table: she understands exactly how cases are valued, where each side's risk lies, and what motivates parties to settle. She does not push for a particular outcome - she creates the conditions for the parties to reach one themselves.",
+        "Whether mediation is voluntary or court-ordered, the quality of the neutral matters enormously. A mediator with real litigation experience - someone who has tried cases, argued appeals, and understands the cost and uncertainty of going to verdict - brings a level of credibility that moves disputes toward resolution. Mary Sharp is that mediator."
+      ],
+      bullets: ["SC Certified Mediator available for civil and commercial disputes", "Retained by counsel on both sides as neutral facilitator", "Civil, commercial, insurance, and employment matters", "Voluntary and court-ordered mediation sessions", "Confidential process that reduces cost and preserves relationships"]
+    }
   ];
   var cx = 250, cy = 250, OR = 220, IR = 112, gap = 1.5;
   var svg = document.getElementById('donutSvg');
@@ -1410,13 +1639,50 @@ footer {
   var hoverEl = document.getElementById('donutHover');
   var nameEl = document.getElementById('donutAreaName');
   var descEl = document.getElementById('donutAreaDesc');
+  var modal = document.getElementById('practiceModal');
+  var modalTitle = document.getElementById('modalTitle');
+  var modalHeadline = document.getElementById('modalHeadline');
+  var modalBody = document.getElementById('modalBody');
+  var modalBullets = document.getElementById('modalBullets');
+  var modalCta = document.getElementById('modalCta');
   var ns = 'http://www.w3.org/2000/svg';
+
+  function openModal(area) {
+    modalTitle.textContent = area.name;
+    modalHeadline.textContent = area.headline;
+    modalBody.innerHTML = '';
+    area.body.forEach(function(para) {
+      var p = document.createElement('p');
+      p.textContent = para;
+      modalBody.appendChild(p);
+    });
+    modalBullets.innerHTML = '';
+    area.bullets.forEach(function(b) {
+      var li = document.createElement('li');
+      li.textContent = b;
+      modalBullets.appendChild(li);
+    });
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+  modalCta.addEventListener('click', closeModal);
+
   function rad(d) { return d * Math.PI / 180; }
   function f(n) { return Math.round(n * 100) / 100; }
   function ptx(r, deg) { return cx + r * Math.cos(rad(deg)); }
   function pty(r, deg) { return cy + r * Math.sin(rad(deg)); }
   var paths = [];
   var legendItems = [];
+
   areas.forEach(function(area, i) {
     var a1 = -90 + i * 36 + gap;
     var a2 = -90 + (i + 1) * 36 - gap;
@@ -1441,7 +1707,7 @@ footer {
         defaultEl.style.display = 'none';
         hoverEl.style.display = 'flex';
         nameEl.textContent = a.name;
-        descEl.textContent = a.desc;
+        descEl.textContent = a.body[0].substring(0, 100) + '...';
         if (legendItems[idx]) legendItems[idx].classList.add('legend-active');
       });
       p.addEventListener('mouseleave', function() {
@@ -1451,10 +1717,12 @@ footer {
         hoverEl.style.display = 'none';
         if (legendItems[idx]) legendItems[idx].classList.remove('legend-active');
       });
+      p.addEventListener('click', function() { openModal(a); });
     })(path, area, tx, ty, i);
     svg.appendChild(path);
     paths.push(path);
   });
+
   areas.forEach(function(area, i) {
     var item = document.createElement('div');
     item.className = 'legend-item';
@@ -1464,12 +1732,17 @@ footer {
     var lbl = document.createElement('span');
     lbl.className = 'legend-label';
     lbl.textContent = area.name;
+    var arrow = document.createElement('span');
+    arrow.className = 'legend-arrow';
+    arrow.textContent = '+';
     item.appendChild(dot);
     item.appendChild(lbl);
-    (function(it, idx) {
+    item.appendChild(arrow);
+    (function(it, a, idx) {
       it.addEventListener('mouseenter', function() { if (paths[idx]) paths[idx].dispatchEvent(new MouseEvent('mouseenter')); });
       it.addEventListener('mouseleave', function() { if (paths[idx]) paths[idx].dispatchEvent(new MouseEvent('mouseleave')); });
-    })(item, i);
+      it.addEventListener('click', function() { openModal(a); });
+    })(item, area, i);
     legend.appendChild(item);
     legendItems.push(item);
   });
