@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo Showcase | Integrity Web Creations</title>
+<meta name="description" content="Custom website concepts designed by Integrity Web Creations for local businesses in Beaufort, SC and beyond.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{--dark:#000d1a;--dark2:#001529;--cyan:#00e5ff;--gray:rgba(255,255,255,.8);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--dark);color:white;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;min-height:100vh;overflow-x:hidden;}
+
+/* ── Header ── */
+.site-header{padding:60px 40px 50px;text-align:center;border-bottom:1px solid rgba(0,229,255,.08);}
+.header-logo{font-size:.88em;font-weight:700;color:rgba(255,255,255,.32);margin-bottom:30px;letter-spacing:.5px;}
+.header-logo span{color:var(--cyan);}
+.header-badge{display:inline-block;font-size:.72em;text-transform:uppercase;letter-spacing:3px;color:var(--cyan);font-weight:600;margin-bottom:18px;background:rgba(0,229,255,.07);border:1px solid rgba(0,229,255,.18);padding:5px 16px;border-radius:50px;}
+.site-header h1{font-size:clamp(1.9em,4vw,3em);font-weight:700;letter-spacing:-1.2px;margin-bottom:16px;line-height:1.08;}
+.grad-text{background:linear-gradient(90deg,#00e5ff,#0066ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.site-header p{color:var(--gray);font-size:1em;max-width:500px;margin:0 auto;line-height:1.75;font-weight:300;}
+
+/* ── Grid ── */
+.demo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:36px;max-width:1140px;margin:64px auto;padding:0 40px;}
+
+/* ── Card ── */
+.demo-card{background:rgba(0,21,41,.65);border:1px solid rgba(0,229,255,.12);border-radius:18px;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease,border-color .3s;text-decoration:none;color:white;display:block;}
+.demo-card:hover{transform:translateY(-7px);box-shadow:0 28px 70px rgba(0,0,0,.65),0 0 0 1px rgba(0,229,255,.28);border-color:rgba(0,229,255,.32);}
+
+/* ── Thumbnail ── */
+.thumb-wrap{width:100%;height:280px;overflow:hidden;position:relative;background:#040c14;border-bottom:1px solid rgba(0,229,255,.07);}
+.thumb-frame{width:1280px;height:900px;border:none;pointer-events:none;transform-origin:top left;display:block;}
+.thumb-wrap::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,10,22,.9) 100%);pointer-events:none;}
+
+/* ── Card body ── */
+.card-body{padding:22px 26px 28px;}
+.card-tag{font-size:.7em;text-transform:uppercase;letter-spacing:2.5px;color:var(--cyan);font-weight:600;margin-bottom:8px;opacity:.85;}
+.card-name{font-size:1.22em;font-weight:700;margin-bottom:9px;line-height:1.2;}
+.card-desc{font-size:.84em;color:rgba(255,255,255,.46);line-height:1.65;margin-bottom:20px;}
+.card-btn{display:inline-flex;align-items:center;gap:7px;background:transparent;border:1.5px solid rgba(0,229,255,.32);color:var(--cyan);padding:10px 24px;border-radius:50px;font-size:.82em;font-weight:600;letter-spacing:.5px;transition:all .25s ease;}
+.demo-card:hover .card-btn{background:rgba(0,229,255,.08);border-color:var(--cyan);box-shadow:0 0 22px rgba(0,229,255,.18);}
+
+/* ── Footer ── */
+.site-footer{text-align:center;padding:38px 40px;border-top:1px solid rgba(255,255,255,.05);margin-top:20px;color:rgba(255,255,255,.24);font-size:.8em;line-height:1.8;}
+.site-footer a{color:var(--cyan);text-decoration:none;}
+.site-footer a:hover{text-decoration:underline;}
+
+@media(max-width:600px){
+  .site-header{padding:44px 24px 38px;}
+  .demo-grid{margin:40px auto;padding:0 20px;gap:24px;}
+  .card-body{padding:18px 20px 22px;}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-logo"><span>integrity</span> WEB CREATIONS</div>
+  <div class="header-badge">Demo Showcase</div>
+  <h1>Website Concepts<br><span class="grad-text">Built for Real Businesses</span></h1>
+  <p>Custom website demos designed by A. Smalls. Click any card to explore the full interactive experience.</p>
+</header>
+
+<main>
+  <div class="demo-grid">
+
+    <!-- Grand Line Garage -->
+    <a class="demo-card" href="grand-line-garage/" target="_blank" rel="noopener noreferrer">
+      <div class="thumb-wrap">
+        <iframe class="thumb-frame" src="grand-line-garage/" scrolling="no" loading="lazy"
+          aria-hidden="true" tabindex="-1" title="Grand Line Garage demo preview"></iframe>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Auto Repair &amp; Mobile Mechanic</div>
+        <div class="card-name">Grand Line Garage</div>
+        <div class="card-desc">A bold, trust-first web presence for an honest auto shop in Beaufort, SC. Dark industrial aesthetic with clear service offerings and direct calls to action.</div>
+        <span class="card-btn">View Demo &rarr;</span>
+      </div>
+    </a>
+
+    <!-- Nora Da Explorer -->
+    <a class="demo-card" href="nora/" target="_blank" rel="noopener noreferrer">
+      <div class="thumb-wrap">
+        <iframe class="thumb-frame" src="nora/" scrolling="no" loading="lazy"
+          aria-hidden="true" tabindex="-1" title="Nora Da Explorer demo preview"></iframe>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Travel Service</div>
+        <div class="card-name">Nora Da Explorer</div>
+        <div class="card-desc">A vibrant, fully animated travel experience site. Cinematic hero, destination gallery, and immersive branding built for an adventure-first service.</div>
+        <span class="card-btn">View Demo &rarr;</span>
+      </div>
+    </a>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>Demos created by <a href="https://www.integritywebcreations.com">Integrity Web Creations</a> &nbsp;&middot;&nbsp; Beaufort, SC &nbsp;&middot;&nbsp; <a href="tel:8432630072">(843) 263-0072</a></p>
+  <p>These are concept sites &mdash; not live client websites. &copy; 2026 Integrity Web Creations.</p>
+</footer>
+
+<script>
+(function(){
+  function scaleFrames(){
+    document.querySelectorAll('.thumb-wrap').forEach(function(wrap){
+      var frame=wrap.querySelector('.thumb-frame');
+      if(!frame)return;
+      var scale=wrap.offsetWidth/1280;
+      frame.style.transform='scale('+scale+')';
+    });
+  }
+  window.addEventListener('resize',scaleFrames,{passive:true});
+  scaleFrames();
+})();
+</script>
+
+</body>
+</html>
