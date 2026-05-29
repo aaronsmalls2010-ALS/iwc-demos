@@ -646,13 +646,11 @@ header.scrolled {
 .contact-map {
   border-radius: 8px;
   overflow: hidden;
-  background: var(--navy);
+  background: var(--slate);
   border: 1px solid var(--slate);
   position: relative;
   min-height: 340px;
-}
-.contact-map img {
-  width: 100%; height: 100%; object-fit: cover;
+  height: 340px;
 }
 .contact-map-overlay {
   position: absolute; inset: 0;
@@ -1080,10 +1078,14 @@ footer {
         </div>
       </div>
       <div class="contact-map reveal">
-        <img src="https://images.unsplash.com/photo-1555699875-5773b1e71789?w=800&h=500&q=80&auto=format&fit=crop" alt="Historic downtown Beaufort, South Carolina" loading="lazy">
-        <div class="contact-map-overlay">
-          <a href="https://maps.google.com/?q=1609+North+Street+Beaufort+SC+29901" target="_blank" rel="noopener noreferrer" class="contact-map-btn">View on Google Maps</a>
-        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.1!2d-80.6698!3d32.4316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fc1a3b3b3b3b3b%3A0x0!2s1609+North+St%2C+Beaufort%2C+SC+29901!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+          width="100%" height="100%"
+          style="border:0; position:absolute; inset:0; width:100%; height:100%;"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Sharp Law Firm location - 1609 North Street, Beaufort SC">
+        </iframe>
       </div>
     </div>
   </div>
