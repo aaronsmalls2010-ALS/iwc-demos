@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Sharp Law Firm, LLC - Civil Litigation | Beaufort, SC</title>
+<meta name="description" content="Sharp Law Firm provides creative and cost-effective civil litigation solutions in Beaufort, South Carolina. AV Preeminent rated attorney Mary Sharp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy-deep: #0A170E;
+  --navy: #112B18;
+  --navy-mid: #16351F;
+  --navy-light: #1C4228;
+  --slate: #2A5538;
+  --slate-soft: #3D6A4D;
+  --gold: #C9A84E;
+  --gold-light: #D9BF72;
+  --gold-dim: #A08838;
+  --ivory: #F0EDE6;
+  --ivory-dim: #C8C3B8;
+  --ivory-mute: #8A8580;
+  --text-primary: #FFFFFF;
+  --text-secondary: #E0DDD5;
+  --shadow-heavy: 0 32px 64px -16px rgba(0,0,0,.5);
+  --shadow-soft: 0 8px 32px -8px rgba(0,0,0,.3);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--navy-deep);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--gold); color: var(--navy-deep); }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--ivory);
+}
+
+.gold { color: var(--gold); }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+
+/* ---- NAV ---- */
+header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 20px 0;
+  transition: padding 0.35s, background 0.35s, border-color 0.35s;
+  border-bottom: 1px solid transparent;
+}
+header.scrolled {
+  background: rgba(10,23,14,0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 12px 0;
+  border-color: var(--slate);
+}
+
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+
+.nav-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  color: var(--ivory);
+  white-space: nowrap;
+}
+.nav-brand span { color: var(--gold); }
+
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a {
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ivory-dim);
+  transition: color 0.25s;
+  position: relative;
+  white-space: nowrap;
+}
+.nav-links a:hover { color: var(--gold-light); }
+.nav-links a::after {
+  content: "";
+  position: absolute; left: 0; bottom: -6px;
+  height: 1px; width: 0;
+  background: var(--gold);
+  transition: width 0.3s var(--ease-out);
+}
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -8px rgba(197,165,90,0.4);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none; border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 110;
+}
+.hamburger span {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--ivory);
+  transition: transform 0.3s, opacity 0.3s;
+}
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 105;
+  background: rgba(10,23,14,0.99);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+.mobile-menu.open {
+  display: flex;
+  opacity: 1;
+}
+.mobile-menu a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--ivory);
+  transition: color 0.25s;
+}
+.mobile-menu a:hover { color: var(--gold); }
+
+/* ---- HERO ---- */
+.hero {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 800px 500px at 70% 40%, rgba(197,165,90,0.08), transparent 60%),
+    radial-gradient(ellipse 600px 400px at 20% 80%, rgba(22,80,40,0.3), transparent 60%),
+    linear-gradient(180deg, var(--navy-deep) 0%, var(--navy) 50%, var(--navy-deep) 100%);
+}
+.hero-img {
+  position: absolute; inset: 0; z-index: 0;
+  background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=80&auto=format') center/cover no-repeat;
+  opacity: 0.07;
+}
+.hero-gradient {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(90deg, var(--navy-deep) 35%, transparent 80%),
+              linear-gradient(0deg, var(--navy-deep) 0%, transparent 40%);
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 680px;
+  padding: 140px 0 80px;
+}
+.hero-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 500;
+  line-height: 1.08;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+.hero p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 520px;
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+.hero-ctas {
+  display: flex; gap: 16px; flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s, background 0.25s, color 0.25s, border-color 0.25s;
+}
+.btn:active { transform: scale(0.97); }
+.btn-gold {
+  background: var(--gold);
+  color: var(--navy-deep);
+  border-color: var(--gold-dim);
+  box-shadow: 0 8px 24px -8px rgba(197,165,90,0.35);
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px -8px rgba(197,165,90,0.5);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--ivory);
+  border-color: var(--slate);
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.hero-line {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--slate), transparent);
+  z-index: 3;
+}
+
+/* ---- ABOUT ---- */
+.about {
+  padding: 120px 0;
+  background: #FFFFFF;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.about-image {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  background: var(--slate);
+}
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-image-accent {
+  position: absolute;
+  bottom: -2px; left: -2px; right: -2px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-dim), transparent);
+}
+.about h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+  color: var(--navy-deep);
+}
+.about-subtitle {
+  font-size: 0.95rem;
+  color: var(--gold);
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+.about p {
+  color: #3A5A44;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  max-width: 520px;
+}
+
+.credentials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+.credential {
+  padding: 16px;
+  background: #F5F8F5;
+  border: 1px solid rgba(42,85,56,0.15);
+  border-radius: 6px;
+}
+.credential-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.credential-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--navy-deep);
+  line-height: 1.3;
+}
+
+/* ---- PRACTICE AREAS ---- */
+.practice {
+  padding: 120px 0;
+  background: var(--navy-deep);
+}
+.section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 64px;
+}
+.section-header h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  margin-bottom: 16px;
+}
+.awards .section-header h2 { color: var(--navy-deep); }
+.section-header p {
+  color: #3A5A44;
+  font-size: 0.95rem;
+}
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: rgba(197,165,90,0.08);
+  border: 1px solid rgba(197,165,90,0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.practice-card {
+  padding: 36px 32px;
+  background: var(--navy);
+  transition: background 0.35s;
+  cursor: default;
+  position: relative;
+}
+.practice-card:hover {
+  background: var(--navy-mid);
+}
+.practice-card h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: var(--ivory);
+  transition: color 0.25s;
+}
+.practice-card:hover h3 { color: var(--gold-light); }
+.practice-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 380px;
+}
+.practice-icon {
+  width: 36px; height: 36px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background: rgba(197,165,90,0.1);
+  display: flex; align-items: center; justify-content: center;
+}
+.practice-icon svg {
+  width: 18px; height: 18px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---- MEDIATION ---- */
+.mediation {
+  padding: 120px 0;
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+.mediation-bg {
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=80&auto=format') center/cover no-repeat;
+  opacity: 0.04;
+}
+.mediation-content {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 64px;
+  align-items: center;
+}
+.mediation h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  margin-bottom: 20px;
+}
+.mediation p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  max-width: 480px;
+}
+.mediation-features {
+  display: flex; flex-direction: column; gap: 20px;
+}
+.mediation-feature {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 24px;
+  background: rgba(10,23,14,0.6);
+  border: 1px solid rgba(197,165,90,0.08);
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.mediation-feature-icon {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgba(197,165,90,0.12);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.mediation-feature-icon svg {
+  width: 18px; height: 18px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.mediation-feature h4 {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+.mediation-feature p {
+  font-size: 0.85rem;
+  margin-bottom: 0;
+  color: var(--ivory-mute);
+}
+
+/* ---- AWARDS ---- */
+.awards {
+  padding: 120px 0;
+  background: #FFFFFF;
+}
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 0;
+}
+.award-card {
+  padding: 32px 28px;
+  background: #F5F8F5;
+  border: 1px solid rgba(42,85,56,0.15);
+  border-radius: 8px;
+  text-align: center;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.award-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+.award-year {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: var(--gold);
+  margin-bottom: 12px;
+  line-height: 1;
+}
+.award-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--navy-deep);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.award-org {
+  font-size: 0.78rem;
+  color: #3A5A44;
+  letter-spacing: 0.04em;
+}
+
+/* ---- BAR ADMISSIONS ---- */
+.admissions {
+  padding: 80px 0;
+  background: #FFFFFF;
+  border-top: 1px solid rgba(42,85,56,0.12);
+  border-bottom: 1px solid rgba(42,85,56,0.12);
+}
+.admissions-inner {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.admissions-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--navy-deep);
+  white-space: nowrap;
+}
+.admissions-list {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+.admission-pill {
+  padding: 8px 18px;
+  background: #F5F8F5;
+  border: 1px solid rgba(42,85,56,0.25);
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #3A5A44;
+  white-space: nowrap;
+  transition: border-color 0.25s, color 0.25s, background 0.25s;
+}
+.admission-pill:hover {
+  border-color: var(--gold-dim);
+  color: var(--gold-light);
+}
+
+/* ---- CONTACT ---- */
+.contact {
+  padding: 120px 0;
+  background: var(--navy-deep);
+  position: relative;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+.contact h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  margin-bottom: 16px;
+}
+.contact > .wrap > p {
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin-bottom: 48px;
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.contact-item {
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.contact-item-icon {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(197,165,90,0.1);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.contact-item-icon svg {
+  width: 20px; height: 20px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.contact-item-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.contact-item-value {
+  font-size: 1rem;
+  color: var(--ivory);
+  line-height: 1.5;
+}
+
+.contact-map {
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--navy);
+  border: 1px solid var(--slate);
+  position: relative;
+  min-height: 340px;
+}
+.contact-map img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.contact-map-overlay {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(10,23,14,0.55);
+}
+.contact-map-btn {
+  padding: 12px 24px;
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.contact-map-btn:hover { transform: translateY(-2px); }
+
+/* ---- FOOTER ---- */
+footer {
+  padding: 48px 0 32px;
+  background: var(--navy);
+  border-top: 1px solid var(--slate);
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.footer-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ivory);
+  margin-bottom: 8px;
+}
+.footer-brand span { color: var(--gold); }
+.footer-tagline {
+  font-size: 0.82rem;
+  color: var(--ivory-mute);
+  max-width: 300px;
+}
+.footer-links {
+  display: flex;
+  gap: 28px;
+}
+.footer-links a {
+  font-size: 0.8rem;
+  color: var(--ivory-dim);
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--gold-light); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(42,85,55,0.4);
+  padding-top: 24px;
+}
+.footer-disclaimer {
+  font-size: 0.72rem;
+  color: var(--ivory-mute);
+  line-height: 1.7;
+  max-width: 800px;
+}
+.footer-copy {
+  font-size: 0.72rem;
+  color: var(--ivory-mute);
+  margin-top: 12px;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-image { max-width: 400px; aspect-ratio: 3/4; }
+  .mediation-content { grid-template-columns: 1fr; gap: 40px; }
+  .awards-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .hero-content { padding: 120px 0 60px; }
+  .hero h1 { font-size: 2.2rem; }
+  .practice-grid { grid-template-columns: 1fr; }
+  .awards-grid { grid-template-columns: 1fr; }
+  .credentials { grid-template-columns: 1fr; }
+  .admissions-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .footer-top { flex-direction: column; }
+  .footer-links { flex-wrap: wrap; gap: 16px; }
+  .about { padding: 80px 0; }
+  .practice { padding: 80px 0; }
+  .mediation { padding: 80px 0; }
+  .awards { padding: 80px 0; }
+  .contact { padding: 80px 0; }
+}
+
+@media (max-width: 480px) {
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas .btn { width: 100%; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header id="header">
+  <div class="wrap">
+    <nav class="nav">
+      <a href="#" class="nav-brand">Sharp <span>Law</span> Firm</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#practice">Practice Areas</a>
+        <a href="#mediation">Mediation</a>
+        <a href="#awards">Recognition</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="tel:8435249850" class="nav-cta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        843.524.9850
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">About</a>
+  <a href="#practice">Practice Areas</a>
+  <a href="#mediation">Mediation</a>
+  <a href="#awards">Recognition</a>
+  <a href="#contact">Contact</a>
+  <a href="tel:8435249850" style="color:var(--gold)">843.524.9850</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-img"></div>
+  <div class="hero-gradient"></div>
+  <div class="wrap">
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">AV Preeminent Rated Attorney</p>
+      <h1 class="reveal reveal-d1">Strategic Counsel for Complex Civil Matters</h1>
+      <p class="reveal reveal-d2">Creative, cost-effective legal solutions built on decades of courtroom experience and trusted client partnerships in the South Carolina Lowcountry.</p>
+      <div class="hero-ctas reveal reveal-d3">
+        <a href="tel:8435249850" class="btn btn-gold">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <a href="#contact" class="btn btn-outline">Schedule Consultation</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-line"></div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <img src="data:image/webp;base64,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VG9vbD4KIDwvcmRmOkRlc2NyaXB0aW9uPgoKIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PScnCiAgeG1sbnM6c3RSZWY9J2h0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMnCiAgeG1sbnM6eG1wTU09J2h0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8nPgogIDx4bXBNTTpEZXJpdmVkRnJvbSByZGY6cGFyc2VUeXBlPSdSZXNvdXJjZSc+CiAgIDxzdFJlZjpkb2N1bWVudElEPmFkb2JlOmRvY2lkOnBob3Rvc2hvcDoyNzYwYzEwOS1mYTEzLWVmNGMtYTA0ZC0wN2Q5YjkwNjg2MjQ8L3N0UmVmOmRvY3VtZW50SUQ+CiAgIDxzdFJlZjppbnN0YW5jZUlEPnhtcC5paWQ6M2E3YTY5Y2QtYTdjMy00NjJmLTk1NWMtNjE0NGVlODZlOTc1PC9zdFJlZjppbnN0YW5jZUlEPgogIDwveG1wTU06RGVyaXZlZEZyb20+CiAgPHhtcE1NOkRvY3VtZW50SUQ+eG1wLmRpZDpEOUNBREVGRTg0QUIxMUVGOEU0N0Y2OTNBQjJFMEFFMDwveG1wTU06RG9jdW1lbnRJRD4KICA8eG1wTU06SW5zdGFuY2VJRD54bXAuaWlkOkQ5Q0FERUZEODRBQjExRUY4RTQ3RjY5M0FCMkUwQUUwPC94bXBNTTpJbnN0YW5jZUlEPgogIDx4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ+eG1wLmRpZDoyY2FmYjBlMy1iMzUzLTRkYmItOTIzZi1lY2Q4Njk4YjY3NjM8L3htcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD4KIDwvcmRmOkRlc2NyaXB0aW9uPgo8L3JkZjpSREY+CjwveDp4bXBtZXRhPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAo8P3hwYWNrZXQgZW5kPSd3Jz8+AA==" alt="Mary Sharp, Attorney at Law" loading="lazy">
+        <div class="about-image-accent"></div>
+      </div>
+      <div>
+        <h2 class="reveal">Mary Sharp</h2>
+        <p class="about-subtitle reveal reveal-d1">Founder, Sharp Law Firm, LLC</p>
+        <p class="reveal reveal-d2">With over three decades of litigation experience, Mary Sharp has built a reputation for tenacious advocacy and thoughtful counsel. She brings both precision and creativity to every matter she handles.</p>
+        <p class="reveal reveal-d2">A former President of the South Carolina Bar and the National Conference of Women's Bar Associations, she is deeply committed to the legal profession and the Beaufort community.</p>
+        <div class="credentials reveal reveal-d3">
+          <div class="credential">
+            <div class="credential-label">Education</div>
+            <div class="credential-value">J.D., Wake Forest University School of Law</div>
+          </div>
+          <div class="credential">
+            <div class="credential-label">Undergraduate</div>
+            <div class="credential-value">B.A. Business Management, NC State University</div>
+          </div>
+          <div class="credential">
+            <div class="credential-label">SC Bar President</div>
+            <div class="credential-value">2021 - 2022</div>
+          </div>
+          <div class="credential">
+            <div class="credential-label">Rating</div>
+            <div class="credential-value">AV Preeminent (Martindale-Hubbell)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE AREAS -->
+<section class="practice" id="practice">
+  <div class="wrap">
+    <div class="section-header">
+      <h2 class="reveal">Practice Areas</h2>
+      <p class="reveal reveal-d1">Comprehensive litigation services across civil, commercial, and insurance matters, with a focus on practical solutions.</p>
+    </div>
+    <div class="practice-grid">
+      <div class="practice-card reveal">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>General Civil Litigation</h3>
+        <p>Personal injury, automobile, construction, trucking, premises liability, and wrongful death cases with over 20 years of trial experience.</p>
+      </div>
+      <div class="practice-card reveal reveal-d1">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+        </div>
+        <h3>Commercial Litigation</h3>
+        <p>Breach of contract and business tort disputes, emphasizing cost-efficient resolutions through skilled negotiation and trial representation.</p>
+      </div>
+      <div class="practice-card reveal">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h3>Personal Injury</h3>
+        <p>Representation for injuries from motor vehicle accidents, slip-and-falls, defective products, medical malpractice, and more.</p>
+      </div>
+      <div class="practice-card reveal reveal-d1">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Insurance Coverage</h3>
+        <p>Policy analysis, dispute negotiations, mediations, arbitrations, and trials across all insurance coverage matters.</p>
+      </div>
+      <div class="practice-card reveal">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4a2 2 0 012 2v8a2 2 0 01-2 2H8a2 2 0 01-2-2v-4"/></svg>
+        </div>
+        <h3>Commercial Trucking</h3>
+        <p>Defense of trucking companies and drivers in claims from property damage to catastrophic losses, with a focus on prelitigation management.</p>
+      </div>
+      <div class="practice-card reveal reveal-d1">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>HOA / Community Law</h3>
+        <p>Legal guidance for subdivisions, condominiums, and planned communities, helping boards anticipate and manage complex issues.</p>
+      </div>
+      <div class="practice-card reveal">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 20h20M4 20V8l8-6 8 6v12"/><path d="M9 20v-6h6v6"/></svg>
+        </div>
+        <h3>Construction Litigation</h3>
+        <p>Construction defect claims through litigation, arbitration, mediation, and negotiation with technical expert coordination.</p>
+      </div>
+      <div class="practice-card reveal reveal-d1">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>Premises Liability</h3>
+        <p>Defense of businesses and property owners against negligent security, slip-and-fall, and assault claims.</p>
+      </div>
+      <div class="practice-card reveal">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3>Appellate Advocacy</h3>
+        <p>Appeals in South Carolina state courts, federal appellate courts, and the United States Supreme Court.</p>
+      </div>
+      <div class="practice-card reveal reveal-d1">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Mediation</h3>
+        <p>SC Certified Mediator facilitating dispute resolution for parties seeking alternatives to costly and prolonged litigation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIATION -->
+<section class="mediation" id="mediation">
+  <div class="mediation-bg"></div>
+  <div class="wrap">
+    <div class="mediation-content">
+      <div>
+        <h2 class="reveal">Mediation Services</h2>
+        <p class="reveal reveal-d1">As a South Carolina Certified Mediator, Mary Sharp offers an effective alternative to costly courtroom proceedings, helping all parties reach practical, lasting resolutions.</p>
+        <p class="reveal reveal-d2">Whether mediation is voluntary or court-ordered, the goal is to work through complex issues with an impartial facilitator who brings tested experience and professional skill.</p>
+        <a href="#contact" class="btn btn-outline reveal reveal-d3" style="margin-top: 12px;">Discuss Your Case</a>
+      </div>
+      <div class="mediation-features">
+        <div class="mediation-feature reveal">
+          <div class="mediation-feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h4>Certified Neutral</h4>
+            <p>State-certified mediator with decades of litigation experience on both sides of the courtroom.</p>
+          </div>
+        </div>
+        <div class="mediation-feature reveal reveal-d1">
+          <div class="mediation-feature-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <div>
+            <h4>Cost-Effective Resolution</h4>
+            <p>A practical path to resolving disputes without the escalating costs and delays of full trial proceedings.</p>
+          </div>
+        </div>
+        <div class="mediation-feature reveal reveal-d2">
+          <div class="mediation-feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div>
+            <h4>Collaborative Process</h4>
+            <p>Working through complex issues together so that all parties may reach a beneficial outcome.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="awards" id="awards">
+  <div class="wrap">
+    <div class="section-header">
+      <h2 class="reveal">Recognition</h2>
+      <p class="reveal reveal-d1">A career of professional excellence, leadership, and service to the legal community.</p>
+    </div>
+    <div class="awards-grid">
+      <div class="award-card reveal">
+        <div class="award-year">2024</div>
+        <div class="award-title">Excellence in Law</div>
+        <div class="award-org">SC Lawyers Weekly</div>
+      </div>
+      <div class="award-card reveal reveal-d1">
+        <div class="award-year">2021</div>
+        <div class="award-title">President, South Carolina Bar</div>
+        <div class="award-org">South Carolina Bar Association</div>
+      </div>
+      <div class="award-card reveal reveal-d2">
+        <div class="award-year">2019</div>
+        <div class="award-title">Jean Galloway Bissell Award</div>
+        <div class="award-org">South Carolina Bar</div>
+      </div>
+      <div class="award-card reveal reveal-d3">
+        <div class="award-year">2017</div>
+        <div class="award-title">American Bar Foundation Fellow</div>
+        <div class="award-org">American Bar Foundation</div>
+      </div>
+      <div class="award-card reveal reveal-d4">
+        <div class="award-year">2017</div>
+        <div class="award-title">Litigation Counsel of America</div>
+        <div class="award-org">Fellow</div>
+      </div>
+      <div class="award-card reveal">
+        <div class="award-year">2010</div>
+        <div class="award-title">President, National Conference of Women's Bar Associations</div>
+        <div class="award-org">NCWBA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BAR ADMISSIONS -->
+<section class="admissions">
+  <div class="wrap">
+    <div class="admissions-inner reveal">
+      <div class="admissions-label">Bar Admissions</div>
+      <div class="admissions-list">
+        <span class="admission-pill">South Carolina</span>
+        <span class="admission-pill">North Carolina</span>
+        <span class="admission-pill">U.S. District Court, D.S.C.</span>
+        <span class="admission-pill">U.S. Court of Appeals, 4th Circuit</span>
+        <span class="admission-pill">U.S. Supreme Court</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="reveal">Get in Touch</h2>
+    <p class="reveal reveal-d1" style="color:var(--text-secondary); max-width:480px; margin-bottom:48px;">Ready to discuss your legal matter? Contact Sharp Law Firm to schedule a consultation.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item reveal">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-value"><a href="tel:8435249850">843.524.9850</a></div>
+          </div>
+        </div>
+        <div class="contact-item reveal reveal-d1">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Office</div>
+            <div class="contact-item-value">1609 North Street<br>PO Box 1589<br>Beaufort, SC 29901</div>
+          </div>
+        </div>
+        <div class="contact-item reveal reveal-d2">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Availability</div>
+            <div class="contact-item-value">Monday - Friday<br>By appointment</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-map reveal">
+        <img src="https://images.unsplash.com/photo-1555699875-5773b1e71789?w=800&h=500&q=80&auto=format&fit=crop" alt="Historic downtown Beaufort, South Carolina" loading="lazy">
+        <div class="contact-map-overlay">
+          <a href="https://maps.google.com/?q=1609+North+Street+Beaufort+SC+29901" target="_blank" rel="noopener noreferrer" class="contact-map-btn">View on Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Sharp <span>Law</span> Firm, LLC</div>
+        <p class="footer-tagline">Providing creative and cost-effective solutions to your problems.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#practice">Practice Areas</a>
+        <a href="#mediation">Mediation</a>
+        <a href="#awards">Recognition</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">The materials on this website are for informational purposes only and do not constitute legal advice. Transmission of information from this site does not create an attorney-client relationship. You should not act upon any information without first seeking qualified professional counsel on your specific matter.</p>
+      <p class="footer-copy">Sharp Law Firm, LLC. 1609 North Street, Beaufort, SC 29901. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  // Scroll header
+  var header = document.getElementById('header');
+  var scrolled = false;
+  function checkScroll() {
+    var s = window.scrollY > 40;
+    if (s !== scrolled) {
+      scrolled = s;
+      header.classList.toggle('scrolled', s);
+    }
+  }
+  window.addEventListener('scroll', checkScroll, { passive: true });
+  checkScroll();
+
+  // Hamburger
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var menuOpen = false;
+  hamburger.addEventListener('click', function() {
+    menuOpen = !menuOpen;
+    hamburger.classList.toggle('active', menuOpen);
+    mobileMenu.classList.toggle('open', menuOpen);
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      menuOpen = false;
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Close mobile menu on scroll
+  window.addEventListener('scroll', function() {
+    if (menuOpen) {
+      menuOpen = false;
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }, { passive: true });
+
+  // Reveal on scroll
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var reveals = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function(el) { observer.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      el.classList.add('visible');
+    });
+  }
+})();
+</script>
+</body>
+</html>
