@@ -1336,20 +1336,6 @@ footer {
   .modal-title { font-size: 1.6rem; }
 }
 
-/* ---- PRACTICE AREAS - WHITE BACKGROUND ---- */
-.practice { background: #FFFFFF !important; }
-.practice .section-header h2 { color: var(--navy-deep); }
-.practice .section-header p { color: #3A5A44; }
-.donut-firm-name { color: var(--navy-deep) !important; }
-.donut-area-name { color: var(--navy-deep) !important; }
-.donut-area-desc { color: #3A5A44 !important; }
-.legend-label { color: #3A5A44 !important; }
-.legend-item:hover .legend-label,
-.legend-item.legend-active .legend-label { color: var(--navy-deep) !important; }
-.legend-item:hover, .legend-item.legend-active {
-  border-color: var(--gold-dim);
-  background: rgba(42,85,56,0.06) !important;
-}
 
 /* ---- MEDIATION - WHITE BACKGROUND ---- */
 .mediation { background: #FFFFFF !important; }
@@ -1377,7 +1363,14 @@ footer {
   color: var(--navy-deep) !important;
   border-color: var(--slate) !important;
 }
-</style>
+
+/* ---- LEGEND DOT FIX FOR WHITE SEGMENTS ON DARK BG ---- */
+.legend-dot {
+  width: 10px; height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  border: 1px solid rgba(197,165,90,0.4);
+}</style>
 </head>
 <body>
 
