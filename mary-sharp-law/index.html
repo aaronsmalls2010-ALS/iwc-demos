@@ -1364,12 +1364,18 @@ footer {
   border-color: var(--slate) !important;
 }
 
-/* ---- LEGEND DOT FIX FOR WHITE SEGMENTS ON DARK BG ---- */
+/* ---- LEGEND DOT - CONSISTENT GOLD ON DARK BG ---- */
 .legend-dot {
   width: 10px; height: 10px;
   border-radius: 2px;
   flex-shrink: 0;
-  border: 1px solid rgba(197,165,90,0.4);
+  background: var(--slate) !important;
+  border: 1px solid rgba(197,165,90,0.3);
+}
+.legend-item:hover .legend-dot,
+.legend-item.legend-active .legend-dot {
+  background: var(--gold) !important;
+  border-color: var(--gold-dim);
 }</style>
 </head>
 <body>
@@ -1730,8 +1736,9 @@ footer {
     var ty = f(22 * Math.sin(rad(mid)));
     var path = document.createElementNS(ns, 'path');
     path.setAttribute('d', d);
-    path.setAttribute('fill', area.color);
-    path.setAttribute('stroke', '#0A170E');
+    path.setAttribute('fill', '#FFFFFF');
+    path.setAttribute('stroke', '#0F2318');
+    path.setAttribute('stroke-width', '3');
     path.setAttribute('stroke-width', '2');
     path.style.cursor = 'pointer';
     path.style.transition = 'transform 0.3s cubic-bezier(0.16,1,0.3,1)';
@@ -1747,7 +1754,7 @@ footer {
       });
       p.addEventListener('mouseleave', function() {
         p.style.transform = 'translate(0,0)';
-        p.setAttribute('fill', a.color);
+        p.setAttribute('fill', '#FFFFFF');
         defaultEl.style.display = 'flex';
         hoverEl.style.display = 'none';
         if (legendItems[idx]) legendItems[idx].classList.remove('legend-active');
@@ -1763,7 +1770,7 @@ footer {
     item.className = 'legend-item';
     var dot = document.createElement('span');
     dot.className = 'legend-dot';
-    dot.style.background = area.color;
+    dot.style.background = 'var(--slate)';
     var lbl = document.createElement('span');
     lbl.className = 'legend-label';
     lbl.textContent = area.name;
