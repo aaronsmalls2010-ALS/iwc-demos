@@ -202,7 +202,7 @@ header.scrolled {
 }
 .hero-img {
   position: absolute; inset: 0; z-index: 0;
-  background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=80&auto=format') center/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80&auto=format') center/cover no-repeat;
   opacity: 0.07;
 }
 .hero-gradient {
@@ -763,6 +763,301 @@ footer {
   .reveal { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ---- TRUST STRIP ---- */
+.trust-strip {
+  padding: 28px 0;
+  background: #FFFFFF;
+  border-bottom: 1px solid rgba(42,85,56,0.12);
+}
+.trust-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 28px;
+}
+.trust-badge-icon {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: rgba(42,85,56,0.08);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.trust-badge-icon svg {
+  width: 18px; height: 18px;
+  stroke: var(--navy-deep);
+}
+.trust-badge-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy-deep);
+  line-height: 1.2;
+}
+.trust-badge-sub {
+  font-size: 0.72rem;
+  color: #3A5A44;
+  letter-spacing: 0.03em;
+}
+.trust-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(42,85,56,0.2);
+  flex-shrink: 0;
+}
+
+/* ---- PERSONAL INJURY TAGLINE ---- */
+.pi-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--gold-light) !important;
+  margin-bottom: 8px !important;
+}
+
+/* ---- NEWS SECTION ---- */
+.news {
+  padding: 100px 0;
+  background: var(--navy);
+}
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.news-card {
+  padding: 32px 28px;
+  background: var(--navy-mid);
+  border: 1px solid rgba(197,165,90,0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.news-card:hover {
+  border-color: rgba(197,165,90,0.3);
+  transform: translateY(-4px);
+}
+.news-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.news-card h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 1.25;
+}
+.news-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+}
+.news-date {
+  font-size: 0.78rem;
+  color: var(--ivory-mute);
+  letter-spacing: 0.05em;
+  border-top: 1px solid rgba(197,165,90,0.1);
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
+/* ---- COMMUNITY SECTION ---- */
+.community {
+  padding: 100px 0;
+  background: #FFFFFF;
+}
+.community-inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 64px;
+  align-items: start;
+}
+.community-header h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--navy-deep);
+  margin-bottom: 16px;
+}
+.community-header p {
+  font-size: 0.92rem;
+  color: #3A5A44;
+  line-height: 1.75;
+}
+.community-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.community-item {
+  padding: 24px;
+  background: #F5F8F5;
+  border: 1px solid rgba(42,85,56,0.12);
+  border-radius: 8px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.community-item:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+.community-icon {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgba(42,85,56,0.08);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+.community-icon svg {
+  width: 18px; height: 18px;
+  stroke: var(--navy-deep);
+}
+.community-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--navy-deep);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.community-role {
+  font-size: 0.78rem;
+  color: #3A5A44;
+  letter-spacing: 0.04em;
+}
+
+/* ---- CONTACT FORM ---- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+.contact-form-wrap {
+  grid-column: 1 / -1;
+}
+.contact-form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--slate);
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.25s;
+  outline: none;
+  width: 100%;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--ivory-mute);
+}
+.form-group select option {
+  background: var(--navy-mid);
+  color: #FFFFFF;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+}
+.form-group textarea { resize: vertical; }
+.form-disclaimer {
+  font-size: 0.7rem;
+  color: var(--ivory-mute);
+  margin-top: 4px;
+  text-align: center;
+}
+.contact-office-photo {
+  grid-column: 1 / -1;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  height: 220px;
+}
+.contact-office-photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: brightness(0.75);
+}
+.contact-office-label {
+  position: absolute;
+  bottom: 16px; left: 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  letter-spacing: 0.05em;
+}
+
+/* make contact-info and contact-map side by side */
+.contact-info { grid-column: 1; }
+.contact-map { grid-column: 2; }
+
+/* ---- MEDIATION CTAS ---- */
+.mediation-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.mediation-counsel-btn {
+  font-size: 0.75rem !important;
+  padding: 12px 20px !important;
+}
+
+/* ---- RESPONSIVE ADDITIONS ---- */
+@media (max-width: 1024px) {
+  .community-inner { grid-template-columns: 1fr; gap: 32px; }
+  .news-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .trust-inner { gap: 0; justify-content: flex-start; }
+  .trust-badge { padding: 10px 16px; }
+  .trust-divider { display: none; }
+  .news-grid { grid-template-columns: 1fr; }
+  .community-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-info { grid-column: 1; }
+  .contact-map { grid-column: 1; }
+  .contact-form-wrap { grid-column: 1; }
+  .contact-office-photo { grid-column: 1; }
+  .mediation-ctas { flex-direction: column; }
+}
 </style>
 </head>
 <body>
@@ -822,6 +1117,63 @@ footer {
   <div class="hero-line"></div>
 </section>
 
+
+<!-- TRUST BADGES -->
+<section class="trust-strip">
+  <div class="wrap">
+    <div class="trust-inner">
+      <div class="trust-badge">
+        <div class="trust-badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <div class="trust-badge-title">AV Preeminent</div>
+          <div class="trust-badge-sub">Martindale-Hubbell</div>
+        </div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+        </div>
+        <div>
+          <div class="trust-badge-title">SC Bar President</div>
+          <div class="trust-badge-sub">2021 - 2022</div>
+        </div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div>
+          <div class="trust-badge-title">ABF Fellow</div>
+          <div class="trust-badge-sub">American Bar Foundation</div>
+        </div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l9-4 9 4v6c0 5.25-3.75 9.74-9 11-5.25-1.26-9-5.75-9-11V6z"/></svg>
+        </div>
+        <div>
+          <div class="trust-badge-title">LCA Fellow</div>
+          <div class="trust-badge-sub">Litigation Counsel of America</div>
+        </div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div>
+          <div class="trust-badge-title">30+ Years</div>
+          <div class="trust-badge-sub">Civil Litigation Experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="wrap">
@@ -885,6 +1237,7 @@ footer {
           <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>
         </div>
         <h3>Personal Injury</h3>
+        <p class="pi-tagline">You deserve an advocate, not just an attorney.</p>
         <p>Representation for injuries from motor vehicle accidents, slip-and-falls, defective products, medical malpractice, and more.</p>
       </div>
       <div class="practice-card reveal reveal-d1">
@@ -949,7 +1302,7 @@ footer {
         <h2 class="reveal">Mediation Services</h2>
         <p class="reveal reveal-d1">As a South Carolina Certified Mediator, Mary Sharp offers an effective alternative to costly courtroom proceedings, helping all parties reach practical, lasting resolutions.</p>
         <p class="reveal reveal-d2">Whether mediation is voluntary or court-ordered, the goal is to work through complex issues with an impartial facilitator who brings tested experience and professional skill.</p>
-        <a href="#contact" class="btn btn-outline reveal reveal-d3" style="margin-top: 12px;">Discuss Your Case</a>
+        <div class="mediation-ctas reveal reveal-d3"><a href="#contact" class="btn btn-outline">Discuss Your Case</a><a href="mailto:info@sharplaw.com" class="btn btn-outline mediation-counsel-btn">Retained by Counsel on Both Sides</a></div>
       </div>
       <div class="mediation-features">
         <div class="mediation-feature reveal">
@@ -958,7 +1311,7 @@ footer {
           </div>
           <div>
             <h4>Certified Neutral</h4>
-            <p>State-certified mediator with decades of litigation experience on both sides of the courtroom.</p>
+            <p>State-certified mediator retained by counsel on both sides of disputes, bringing impartial expertise to every session.</p>
           </div>
         </div>
         <div class="mediation-feature reveal reveal-d1">
@@ -984,6 +1337,36 @@ footer {
   </div>
 </section>
 
+
+<!-- NEWS -->
+<section class="news" id="news">
+  <div class="wrap">
+    <div class="section-header">
+      <h2 class="reveal">In the News</h2>
+      <p class="reveal reveal-d1">Recognition from peers, colleagues, and the legal community.</p>
+    </div>
+    <div class="news-grid">
+      <div class="news-card reveal">
+        <div class="news-tag">SC Lawyers Weekly</div>
+        <h3>Excellence in Law Honoree</h3>
+        <p>Named among South Carolina's most distinguished legal professionals for outstanding achievement and community impact.</p>
+        <div class="news-date">2024</div>
+      </div>
+      <div class="news-card reveal reveal-d1">
+        <div class="news-tag">South Carolina Bar</div>
+        <h3>Elected Bar President</h3>
+        <p>Served as President of the South Carolina Bar, leading the state's largest professional organization for attorneys.</p>
+        <div class="news-date">2021 - 2022</div>
+      </div>
+      <div class="news-card reveal reveal-d2">
+        <div class="news-tag">SC Bar Foundation</div>
+        <h3>Jean Galloway Bissell Award</h3>
+        <p>Honored for exemplary contributions to the legal profession and advancement of women in South Carolina law.</p>
+        <div class="news-date">2019</div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- AWARDS -->
 <section class="awards" id="awards">
   <div class="wrap">
@@ -1042,6 +1425,48 @@ footer {
   </div>
 </section>
 
+
+<!-- COMMUNITY -->
+<section class="community" id="community">
+  <div class="wrap">
+    <div class="community-inner">
+      <div class="community-header reveal">
+        <h2>Rooted in Beaufort</h2>
+        <p>Mary Sharp is more than an attorney. She is a committed member of the Lowcountry community, serving the organizations and institutions that make Beaufort home.</p>
+      </div>
+      <div class="community-grid">
+        <div class="community-item reveal">
+          <div class="community-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="community-name">Penn Center</div>
+          <div class="community-role">Board Member</div>
+        </div>
+        <div class="community-item reveal reveal-d1">
+          <div class="community-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="community-name">Lowcountry Legal Volunteers</div>
+          <div class="community-role">President, 2009 - 2010</div>
+        </div>
+        <div class="community-item reveal reveal-d2">
+          <div class="community-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div class="community-name">Technical College of the Lowcountry</div>
+          <div class="community-role">Former Faculty</div>
+        </div>
+        <div class="community-item reveal reveal-d3">
+          <div class="community-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div class="community-name">Historic Beaufort Foundation</div>
+          <div class="community-role">Board Member</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="wrap">
@@ -1077,6 +1502,46 @@ footer {
           </div>
         </div>
       </div>
+      <div class="contact-form-wrap reveal reveal-d1">
+        <h3 class="contact-form-title">Send a Message</h3>
+        <form class="contact-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="cf-name">Full Name</label>
+            <input type="text" id="cf-name" placeholder="Jane Smith">
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email Address</label>
+            <input type="email" id="cf-email" placeholder="jane@example.com">
+          </div>
+          <div class="form-group">
+            <label for="cf-phone">Phone Number</label>
+            <input type="tel" id="cf-phone" placeholder="(843) 555-0000">
+          </div>
+          <div class="form-group">
+            <label for="cf-matter">Type of Matter</label>
+            <select id="cf-matter">
+              <option value="">Select a practice area...</option>
+              <option>Personal Injury</option>
+              <option>Commercial Litigation</option>
+              <option>Insurance Coverage</option>
+              <option>Commercial Trucking</option>
+              <option>Construction Litigation</option>
+              <option>HOA / Community Law</option>
+              <option>Premises Liability</option>
+              <option>Mediation</option>
+              <option>Appellate</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cf-message">Brief Description</label>
+            <textarea id="cf-message" rows="4" placeholder="Briefly describe your legal matter..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;">Send Message</button>
+          <p class="form-disclaimer">Submitting this form does not create an attorney-client relationship.</p>
+        </form>
+      </div>
+      <div class="contact-office-photo reveal"><img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&h=300&q=80&auto=format&fit=crop" alt="Historic downtown Beaufort, South Carolina" loading="lazy"><div class="contact-office-label">Beaufort, South Carolina</div></div>
       <div class="contact-map reveal">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.1!2d-80.6698!3d32.4316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fc1a3b3b3b3b3b%3A0x0!2s1609+North+St%2C+Beaufort%2C+SC+29901!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
