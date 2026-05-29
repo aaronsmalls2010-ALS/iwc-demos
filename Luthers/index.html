@@ -122,15 +122,18 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:900;line-height:1.05;l
 .menu-tab.active{background:var(--rust);border-color:var(--rust);color:#fff}
 
 /* Tab panels */
-.menu-panel{display:none;max-width:700px;margin:0 auto}
+.menu-panel{display:none;position:relative;border-radius:16px;overflow:hidden;min-height:400px}
 .menu-panel.active{display:block}
-.menu-panel-sub{text-align:center;color:var(--cream-mute);font-size:.82rem;margin-bottom:24px;font-style:italic}
-.menu-item{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;border-bottom:1px solid rgba(46,46,46,.35)}
+.menu-panel-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center}
+.menu-panel-bg::after{content:"";position:absolute;inset:0;background:rgba(10,10,10,.82)}
+.menu-panel-card{position:relative;z-index:1;max-width:700px;margin:0 auto;background:rgba(10,10,10,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(201,169,110,.15);border-radius:14px;padding:36px 40px;margin-top:32px;margin-bottom:32px}
+.menu-panel-sub{text-align:center;color:var(--cream-dim);font-size:.82rem;margin-bottom:20px;font-style:italic}
+.menu-item{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;border-bottom:1px solid rgba(201,169,110,.1)}
 .menu-item:last-child{border-bottom:none}
 .menu-item-left{flex:1;min-width:0}
 .menu-item-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);line-height:1.3}
 .menu-item-name .star{color:var(--rust);font-size:.8em}
-.menu-item-desc{font-size:.82rem;color:var(--cream-mute);line-height:1.45;margin-top:3px}
+.menu-item-desc{font-size:.82rem;color:var(--cream-dim);line-height:1.45;margin-top:3px}
 .menu-item-price{font-family:'Oswald',sans-serif;font-weight:600;color:var(--tan);font-size:.95rem;letter-spacing:.02em;white-space:nowrap;flex-shrink:0}
 
 /* ===== LIVE MUSIC ===== */
@@ -212,6 +215,7 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:900;line-height:1.05;l
   .about-image img{height:320px}
   .menu-tabs{gap:6px}
   .menu-tab{font-size:.7rem;padding:8px 14px}
+  .menu-panel-card{padding:24px 20px;margin:20px 12px;border-radius:12px}
   .music-grid{grid-template-columns:1fr;gap:40px}
   .music-visual img{height:340px}
   .reviews-grid{grid-template-columns:1fr}
@@ -356,78 +360,102 @@ h1,h2,h3{font-family:'Playfair Display',serif;font-weight:900;line-height:1.05;l
 
     <!-- STARTERS -->
     <div class="menu-panel active" id="tab-starters" role="tabpanel">
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Beer Cheese Pretzels</div><div class="menu-item-desc">(4) salted soft pretzel rods, warm beer cheese dip</div></div><div class="menu-item-price">$13</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Crab &amp; Shrimp Dip</div><div class="menu-item-desc">Served hot with bread and bugles</div></div><div class="menu-item-price">$16</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Deep Fried Chicken Wings</div><div class="menu-item-desc">Baker's dozen. Wet: mild, BBQ, teriyaki, tiger. Dry rub: garlic peppercorn, hickory, ginger teriyaki</div></div><div class="menu-item-price">$17/$18</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name"><span class="star">*</span>Fried Oysters</div><div class="menu-item-desc">(7) on platter, hot or mild</div></div><div class="menu-item-price">MKT</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Fried Pickles</div><div class="menu-item-desc">Deep fried pickle chips served with ranch</div></div><div class="menu-item-price">$11</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Pot Stickers</div><div class="menu-item-desc">(6) fried wontons, chicken and veggie mixture, with teriyaki sauce</div></div><div class="menu-item-price">$11</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Mac &amp; Cheese Bites</div><div class="menu-item-desc">(10) deep fried pepper jack mac &amp; cheese</div></div><div class="menu-item-price">$13</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Jalapeno Poppers</div><div class="menu-item-desc">(8) cream cheese filled, served with ranch</div></div><div class="menu-item-price">$11</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Nacho Mama</div><div class="menu-item-desc">Tortilla chips topped with chili, nacho cheese, lettuce, tomato. Sour cream, salsa, jalapenos on side</div></div><div class="menu-item-price">$16</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Chicken Tenders</div><div class="menu-item-desc">(5) breaded fried chicken tenders: plain, mild, hot, BBQ, teriyaki, tiger</div></div><div class="menu-item-price">$15</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Mozzarella Sticks</div><div class="menu-item-desc">(6) served with marinara</div></div><div class="menu-item-price">$10</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Fried Green Tomatoes</div><div class="menu-item-desc">(5) deep fried, topped with pimento cheese and balsamic glaze</div></div><div class="menu-item-price">$15</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Sour Cream &amp; Chive Fries</div><div class="menu-item-desc">Dry seasoned skinny fries</div></div><div class="menu-item-price">$7/$10</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Steak Fries</div><div class="menu-item-desc">Thick cut plain fries</div></div><div class="menu-item-price">$7/$10</div></div>
+      <div class="menu-panel-bg" style="background-image:url('https://images.unsplash.com/photo-1541592106381-b31e9677c0e4?w=1200&q=70')"></div>
+      <div class="menu-panel-card">
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Beer Cheese Pretzels</div><div class="menu-item-desc">(4) salted soft pretzel rods, warm beer cheese dip</div></div><div class="menu-item-price">$13</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Crab &amp; Shrimp Dip</div><div class="menu-item-desc">Served hot with bread and bugles</div></div><div class="menu-item-price">$16</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Deep Fried Chicken Wings</div><div class="menu-item-desc">Baker's dozen. Wet: mild, BBQ, teriyaki, tiger. Dry rub: garlic peppercorn, hickory, ginger teriyaki</div></div><div class="menu-item-price">$17/$18</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name"><span class="star">*</span>Fried Oysters</div><div class="menu-item-desc">(7) on platter, hot or mild</div></div><div class="menu-item-price">MKT</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Fried Pickles</div><div class="menu-item-desc">Deep fried pickle chips served with ranch</div></div><div class="menu-item-price">$11</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Pot Stickers</div><div class="menu-item-desc">(6) fried wontons, chicken and veggie mixture, with teriyaki sauce</div></div><div class="menu-item-price">$11</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Mac &amp; Cheese Bites</div><div class="menu-item-desc">(10) deep fried pepper jack mac &amp; cheese</div></div><div class="menu-item-price">$13</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Jalapeno Poppers</div><div class="menu-item-desc">(8) cream cheese filled, served with ranch</div></div><div class="menu-item-price">$11</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Nacho Mama</div><div class="menu-item-desc">Tortilla chips topped with chili, nacho cheese, lettuce, tomato. Sour cream, salsa, jalapenos on side</div></div><div class="menu-item-price">$16</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Chicken Tenders</div><div class="menu-item-desc">(5) breaded fried chicken tenders: plain, mild, hot, BBQ, teriyaki, tiger</div></div><div class="menu-item-price">$15</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Mozzarella Sticks</div><div class="menu-item-desc">(6) served with marinara</div></div><div class="menu-item-price">$10</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Fried Green Tomatoes</div><div class="menu-item-desc">(5) deep fried, topped with pimento cheese and balsamic glaze</div></div><div class="menu-item-price">$15</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Sour Cream &amp; Chive Fries</div><div class="menu-item-desc">Dry seasoned skinny fries</div></div><div class="menu-item-price">$7/$10</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Steak Fries</div><div class="menu-item-desc">Thick cut plain fries</div></div><div class="menu-item-price">$7/$10</div></div>
+      </div>
     </div>
 
     <!-- SALADS -->
     <div class="menu-panel" id="tab-salads" role="tabpanel">
-      <p class="menu-panel-sub">Dressings: Ranch, Bleu Cheese, Honey Mustard, Balsamic Vinaigrette. Add: Steak $8, Shrimp $8, Chicken $7</p>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Garden</div><div class="menu-item-desc">Iceberg lettuce, shredded carrot &amp; red cabbage, onion, cucumber, tomato</div></div><div class="menu-item-price">$14</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Chef</div><div class="menu-item-desc">Iceberg lettuce, carrot, red cabbage, onion, cucumber, tomato, ham, turkey, bacon, hard boiled egg, mozzarella</div></div><div class="menu-item-price">$18</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Caesar</div><div class="menu-item-desc">Romaine, shredded parmesan, seasoned croutons, tossed in caesar dressing</div></div><div class="menu-item-price">$16</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cranberry Walnut</div><div class="menu-item-desc">Spinach, walnuts, dried cranberries, feta cheese, onion</div></div><div class="menu-item-price">$17</div></div>
+      <div class="menu-panel-bg" style="background-image:url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=70')"></div>
+      <div class="menu-panel-card">
+        <p class="menu-panel-sub">Dressings: Ranch, Bleu Cheese, Honey Mustard, Balsamic Vinaigrette. Add: Steak $8, Shrimp $8, Chicken $7</p>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Garden</div><div class="menu-item-desc">Iceberg lettuce, shredded carrot &amp; red cabbage, onion, cucumber, tomato</div></div><div class="menu-item-price">$14</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Chef</div><div class="menu-item-desc">Iceberg lettuce, carrot, red cabbage, onion, cucumber, tomato, ham, turkey, bacon, hard boiled egg, mozzarella</div></div><div class="menu-item-price">$18</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Caesar</div><div class="menu-item-desc">Romaine, shredded parmesan, seasoned croutons, tossed in caesar dressing</div></div><div class="menu-item-price">$16</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cranberry Walnut</div><div class="menu-item-desc">Spinach, walnuts, dried cranberries, feta cheese, onion</div></div><div class="menu-item-price">$17</div></div>
+      </div>
     </div>
 
     <!-- PIZZA -->
     <div class="menu-panel" id="tab-pizza" role="tabpanel">
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Pepperoni</div><div class="menu-item-desc">Marinara, mozzarella, pepperoni</div></div><div class="menu-item-price">$15</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cheese</div><div class="menu-item-desc">Marinara, mozzarella</div></div><div class="menu-item-price">$14</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">White</div><div class="menu-item-desc">Garlic &amp; olive oil, mozzarella, spinach, tomato, feta</div></div><div class="menu-item-price">$16</div></div>
+      <div class="menu-panel-bg" style="background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=70')"></div>
+      <div class="menu-panel-card">
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Pepperoni</div><div class="menu-item-desc">Marinara, mozzarella, pepperoni</div></div><div class="menu-item-price">$15</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cheese</div><div class="menu-item-desc">Marinara, mozzarella</div></div><div class="menu-item-price">$14</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">White</div><div class="menu-item-desc">Garlic &amp; olive oil, mozzarella, spinach, tomato, feta</div></div><div class="menu-item-price">$16</div></div>
+      </div>
     </div>
 
     <!-- SANDWICHES -->
     <div class="menu-panel" id="tab-sandwiches" role="tabpanel">
-      <p class="menu-panel-sub">Served with choice of one: potato salad, coleslaw, or fries</p>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">French Dip</div><div class="menu-item-desc">Shaved roast beef, grilled mushrooms, swiss, au jus</div></div><div class="menu-item-price">$16</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cheese Steak</div><div class="menu-item-desc">Peppers, onions, choice of cheese: american, swiss, cheddar, provolone, pepper jack</div></div><div class="menu-item-price">$15/$16</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Turkey Bacon Brie Wrap</div><div class="menu-item-desc">Baked in sundried tomato wrap with turkey, bacon, brie</div></div><div class="menu-item-price">$18</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Buffalo Chicken Wrap</div><div class="menu-item-desc">Fried or shredded, lettuce, tomato, onion, mild, ranch</div></div><div class="menu-item-price">$14</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Chicken Caesar Wrap</div><div class="menu-item-desc">Fried or shredded, romaine, parmesan, caesar dressing</div></div><div class="menu-item-price">$15</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Fish Sandwich</div><div class="menu-item-desc">Blackened or fried, lettuce, tomato and onion on a hoagie</div></div><div class="menu-item-price">$15</div></div>
+      <div class="menu-panel-bg" style="background-image:url('https://images.unsplash.com/photo-1509722747041-616f39b57569?w=1200&q=70')"></div>
+      <div class="menu-panel-card">
+        <p class="menu-panel-sub">Served with choice of one: potato salad, coleslaw, or fries</p>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">French Dip</div><div class="menu-item-desc">Shaved roast beef, grilled mushrooms, swiss, au jus</div></div><div class="menu-item-price">$16</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Cheese Steak</div><div class="menu-item-desc">Peppers, onions, choice of cheese: american, swiss, cheddar, provolone, pepper jack</div></div><div class="menu-item-price">$15/$16</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Turkey Bacon Brie Wrap</div><div class="menu-item-desc">Baked in sundried tomato wrap with turkey, bacon, brie</div></div><div class="menu-item-price">$18</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Buffalo Chicken Wrap</div><div class="menu-item-desc">Fried or shredded, lettuce, tomato, onion, mild, ranch</div></div><div class="menu-item-price">$14</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Chicken Caesar Wrap</div><div class="menu-item-desc">Fried or shredded, romaine, parmesan, caesar dressing</div></div><div class="menu-item-price">$15</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Fish Sandwich</div><div class="menu-item-desc">Blackened or fried, lettuce, tomato and onion on a hoagie</div></div><div class="menu-item-price">$15</div></div>
+      </div>
     </div>
 
     <!-- BURGERS -->
     <div class="menu-panel" id="tab-burgers" role="tabpanel">
-      <p class="menu-panel-sub">Served with choice of: potato salad, coleslaw, or fries</p>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name"><span class="star">*</span>Classic</div><div class="menu-item-desc">Lettuce, tomato, onion, choice of cheese. Rub: plain, hickory, or garlic peppercorn</div></div><div class="menu-item-price">$16</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Shrimp</div><div class="menu-item-desc">House made shrimp patty, lettuce, tomato, tartar sauce</div></div><div class="menu-item-price">$16</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name"><span class="star">*</span>Brewsky's</div><div class="menu-item-desc">Sauteed onions, bacon, bleu cheese, garlic peppercorn rub</div></div><div class="menu-item-price">$17</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name"><span class="star">*</span>BBQ Bacon</div><div class="menu-item-desc">BBQ sauce, cheddar, bacon, lettuce, tomato, onion</div></div><div class="menu-item-price">$16</div></div>
+      <div class="menu-panel-bg" style="background-image:url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=70')"></div>
+      <div class="menu-panel-card">
+        <p class="menu-panel-sub">Served with choice of: potato salad, coleslaw, or fries</p>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name"><span class="star">*</span>Classic</div><div class="menu-item-desc">Lettuce, tomato, onion, choice of cheese. Rub: plain, hickory, or garlic peppercorn</div></div><div class="menu-item-price">$16</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Shrimp</div><div class="menu-item-desc">House made shrimp patty, lettuce, tomato, tartar sauce</div></div><div class="menu-item-price">$16</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name"><span class="star">*</span>Brewsky's</div><div class="menu-item-desc">Sauteed onions, bacon, bleu cheese, garlic peppercorn rub</div></div><div class="menu-item-price">$17</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name"><span class="star">*</span>BBQ Bacon</div><div class="menu-item-desc">BBQ sauce, cheddar, bacon, lettuce, tomato, onion</div></div><div class="menu-item-price">$16</div></div>
+      </div>
     </div>
 
     <!-- BASKETS -->
     <div class="menu-panel" id="tab-baskets" role="tabpanel">
-      <p class="menu-panel-sub">Served with steak fries and coleslaw</p>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Chicken Tender</div><div class="menu-item-desc">(3) breaded fried chicken tenders</div></div><div class="menu-item-price">$16</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name"><span class="star">*</span>Oyster</div><div class="menu-item-desc">(7oz) house battered, fried</div></div><div class="menu-item-price">MKT</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Shrimp</div><div class="menu-item-desc">(8) house battered, fried</div></div><div class="menu-item-price">$16</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name"><span class="star">*</span>Fish</div><div class="menu-item-desc">Fish fillet nuggets, house battered, fried</div></div><div class="menu-item-price">$16</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Hot Dog</div><div class="menu-item-desc">1 jumbo hotdog. Add chili, cheese, sauerkraut, or onions $1 each</div></div><div class="menu-item-price">$13</div></div>
+      <div class="menu-panel-bg" style="background-image:url('https://images.unsplash.com/photo-1576777647209-e8733d7b851d?w=1200&q=70')"></div>
+      <div class="menu-panel-card">
+        <p class="menu-panel-sub">Served with steak fries and coleslaw</p>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Chicken Tender</div><div class="menu-item-desc">(3) breaded fried chicken tenders</div></div><div class="menu-item-price">$16</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name"><span class="star">*</span>Oyster</div><div class="menu-item-desc">(7oz) house battered, fried</div></div><div class="menu-item-price">MKT</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Shrimp</div><div class="menu-item-desc">(8) house battered, fried</div></div><div class="menu-item-price">$16</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name"><span class="star">*</span>Fish</div><div class="menu-item-desc">Fish fillet nuggets, house battered, fried</div></div><div class="menu-item-price">$16</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Hot Dog</div><div class="menu-item-desc">1 jumbo hotdog. Add chili, cheese, sauerkraut, or onions $1 each</div></div><div class="menu-item-price">$13</div></div>
+      </div>
     </div>
 
     <!-- ENTREES -->
     <div class="menu-panel" id="tab-entrees" role="tabpanel">
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name"><span class="star">*</span>Ribeye</div><div class="menu-item-desc">12 oz hand cut ribeye topped with bleu cheese crumbles and sauteed onions, choice of two sides</div></div><div class="menu-item-price">$32</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name"><span class="star">*</span>Sirloin</div><div class="menu-item-desc">10 oz hickory seasoned sirloin with choice of two sides</div></div><div class="menu-item-price">$25</div></div>
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Shrimp &amp; Fish Plate</div><div class="menu-item-desc">Fish fillet and 6 jumbo shrimp, fried or blackened, choice of two sides</div></div><div class="menu-item-price">$26</div></div>
+      <div class="menu-panel-bg" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=70')"></div>
+      <div class="menu-panel-card">
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name"><span class="star">*</span>Ribeye</div><div class="menu-item-desc">12 oz hand cut ribeye topped with bleu cheese crumbles and sauteed onions, choice of two sides</div></div><div class="menu-item-price">$32</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name"><span class="star">*</span>Sirloin</div><div class="menu-item-desc">10 oz hickory seasoned sirloin with choice of two sides</div></div><div class="menu-item-price">$25</div></div>
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-name">Shrimp &amp; Fish Plate</div><div class="menu-item-desc">Fish fillet and 6 jumbo shrimp, fried or blackened, choice of two sides</div></div><div class="menu-item-price">$26</div></div>
+      </div>
     </div>
 
     <!-- BEVERAGES -->
     <div class="menu-panel" id="tab-beverages" role="tabpanel">
-      <div class="menu-item"><div class="menu-item-left"><div class="menu-item-desc">Sweet Tea, Unsweet Tea, Pepsi, Diet Pepsi, Mountain Dew, Dr. Pepper, Gingerale, Starry, Pink Lemonade, Rootbeer</div></div><div class="menu-item-price">$3.50</div></div>
+      <div class="menu-panel-bg" style="background-image:url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=1200&q=70')"></div>
+      <div class="menu-panel-card">
+        <div class="menu-item"><div class="menu-item-left"><div class="menu-item-desc">Sweet Tea, Unsweet Tea, Pepsi, Diet Pepsi, Mountain Dew, Dr. Pepper, Gingerale, Starry, Pink Lemonade, Rootbeer</div></div><div class="menu-item-price">$3.50</div></div>
+      </div>
     </div>
 
     <p class="menu-note">*Consuming raw or undercooked meats, poultry, seafood may increase your risk of foodborne illness.</p>
