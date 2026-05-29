@@ -1081,6 +1081,137 @@ footer {
   .contact-office-photo { grid-column: 1; }
   .mediation-ctas { flex-direction: column; }
 }
+
+/* ---- DONUT CHART ---- */
+.donut-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.donut-chart-area {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+#donutSvg { width: 100%; height: auto; display: block; }
+.donut-center-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 170px;
+  text-align: center;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.donut-default {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.donut-firm-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+.donut-firm-sub {
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.donut-hover {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+.donut-area-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  line-height: 1.2;
+}
+.donut-area-desc {
+  font-size: 0.67rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.legend-item:hover, .legend-item.legend-active {
+  border-color: var(--gold-dim);
+  background: rgba(197,165,90,0.07);
+}
+.legend-dot {
+  width: 10px; height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.legend-label {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+.legend-item:hover .legend-label,
+.legend-item.legend-active .legend-label { color: var(--gold-light); }
+
+/* ---- CONTACT SIMPLIFIED ---- */
+.contact-grid-simple {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 56px;
+  align-items: start;
+}
+.contact-left h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  margin-bottom: 12px;
+}
+.contact-map {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--slate);
+  height: 480px;
+  position: relative;
+}
+.contact-map iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+  display: block;
+  position: relative !important;
+  inset: auto !important;
+}
+@media (max-width: 1024px) {
+  .donut-layout { grid-template-columns: 1fr; }
+  .donut-chart-area { max-width: 420px; }
+  .contact-grid-simple { grid-template-columns: 1fr; }
+  .contact-map { height: 360px; }
+}
+@media (max-width: 768px) {
+  .donut-chart-area { max-width: 300px; }
+  .contact-map { height: 280px; }
+}
 </style>
 </head>
 <body>
@@ -1238,84 +1369,112 @@ footer {
   <div class="wrap">
     <div class="section-header">
       <h2 class="reveal">Practice Areas</h2>
-      <p class="reveal reveal-d1">Comprehensive litigation services across civil, commercial, and insurance matters, with a focus on practical solutions.</p>
+      <p class="reveal reveal-d1">Hover over any section to explore. Click a legend item to highlight it.</p>
     </div>
-    <div class="practice-grid">
-      <div class="practice-card reveal">
-        <div class="practice-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    <div class="donut-layout reveal">
+      <div class="donut-chart-area">
+        <svg id="donutSvg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"></svg>
+        <div class="donut-center-text">
+          <div id="donutDefault" class="donut-default">
+            <div class="donut-firm-name">Sharp<br>Law Firm</div>
+            <div class="donut-firm-sub">10 Practice Areas</div>
+          </div>
+          <div id="donutHover" class="donut-hover" style="display:none;">
+            <div id="donutAreaName" class="donut-area-name"></div>
+            <div id="donutAreaDesc" class="donut-area-desc"></div>
+          </div>
         </div>
-        <h3>General Civil Litigation</h3>
-        <p>Personal injury, automobile, construction, trucking, premises liability, and wrongful death cases with over 20 years of trial experience.</p>
       </div>
-      <div class="practice-card reveal reveal-d1">
-        <div class="practice-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
-        </div>
-        <h3>Commercial Litigation</h3>
-        <p>Breach of contract and business tort disputes, emphasizing cost-efficient resolutions through skilled negotiation and trial representation.</p>
-      </div>
-      <div class="practice-card reveal">
-        <div class="practice-icon">
-          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>
-        </div>
-        <h3>Personal Injury</h3>
-        <p class="pi-tagline">You deserve an advocate, not just an attorney.</p>
-        <p>Representation for injuries from motor vehicle accidents, slip-and-falls, defective products, medical malpractice, and more.</p>
-      </div>
-      <div class="practice-card reveal reveal-d1">
-        <div class="practice-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3>Insurance Coverage</h3>
-        <p>Policy analysis, dispute negotiations, mediations, arbitrations, and trials across all insurance coverage matters.</p>
-      </div>
-      <div class="practice-card reveal">
-        <div class="practice-icon">
-          <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4a2 2 0 012 2v8a2 2 0 01-2 2H8a2 2 0 01-2-2v-4"/></svg>
-        </div>
-        <h3>Commercial Trucking</h3>
-        <p>Defense of trucking companies and drivers in claims from property damage to catastrophic losses, with a focus on prelitigation management.</p>
-      </div>
-      <div class="practice-card reveal reveal-d1">
-        <div class="practice-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <h3>HOA / Community Law</h3>
-        <p>Legal guidance for subdivisions, condominiums, and planned communities, helping boards anticipate and manage complex issues.</p>
-      </div>
-      <div class="practice-card reveal">
-        <div class="practice-icon">
-          <svg viewBox="0 0 24 24"><path d="M2 20h20M4 20V8l8-6 8 6v12"/><path d="M9 20v-6h6v6"/></svg>
-        </div>
-        <h3>Construction Litigation</h3>
-        <p>Construction defect claims through litigation, arbitration, mediation, and negotiation with technical expert coordination.</p>
-      </div>
-      <div class="practice-card reveal reveal-d1">
-        <div class="practice-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <h3>Premises Liability</h3>
-        <p>Defense of businesses and property owners against negligent security, slip-and-fall, and assault claims.</p>
-      </div>
-      <div class="practice-card reveal">
-        <div class="practice-icon">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <h3>Appellate Advocacy</h3>
-        <p>Appeals in South Carolina state courts, federal appellate courts, and the United States Supreme Court.</p>
-      </div>
-      <div class="practice-card reveal reveal-d1">
-        <div class="practice-icon">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-        </div>
-        <h3>Mediation</h3>
-        <p>SC Certified Mediator facilitating dispute resolution for parties seeking alternatives to costly and prolonged litigation.</p>
-      </div>
+      <div class="donut-legend" id="donutLegend"></div>
     </div>
   </div>
 </section>
-
+<script>
+(function() {
+  var areas = [
+    { name: 'General Civil Litigation',  desc: 'Personal injury, automobile, construction, trucking, premises liability, and wrongful death with 20+ years of trial experience.', color: '#1C4228' },
+    { name: 'Commercial Litigation',     desc: 'Breach of contract and business tort disputes resolved through skilled negotiation, mediation, or trial representation.', color: '#16351F' },
+    { name: 'Personal Injury',           desc: 'Tenacious advocacy for injuries from vehicle accidents, slip-and-falls, defective products, and medical malpractice. You deserve an advocate, not just an attorney.', color: '#275632' },
+    { name: 'Insurance Coverage',        desc: 'Policy analysis, dispute negotiations, arbitrations, and trials across all insurance coverage matters in state and federal court.', color: '#0F2318' },
+    { name: 'Commercial Trucking',       desc: 'Defense of trucking companies and drivers in claims from property damage to catastrophic injury losses, with a focus on prelitigation management.', color: '#2A5538' },
+    { name: 'HOA / Community Law',       desc: 'Legal guidance for subdivisions, condominiums, and planned communities, helping boards anticipate and navigate complex governance issues.', color: '#1B3F28' },
+    { name: 'Construction Litigation',   desc: 'Construction defect claims through litigation, arbitration, mediation, and negotiation with technical expert coordination.', color: '#224D30' },
+    { name: 'Premises Liability',        desc: 'Defense of businesses and property owners against negligent security, slip-and-fall, and assault and battery claims.', color: '#122918' },
+    { name: 'Appellate Advocacy',        desc: 'Appeals in South Carolina courts, the U.S. Court of Appeals for the 4th Circuit, and the United States Supreme Court.', color: '#1E4429' },
+    { name: 'Mediation',                 desc: 'SC Certified Mediator retained by counsel on both sides, providing impartial expertise to reach practical, lasting resolutions.', color: '#2F683B' }
+  ];
+  var cx = 250, cy = 250, OR = 220, IR = 112, gap = 1.5;
+  var svg = document.getElementById('donutSvg');
+  var legend = document.getElementById('donutLegend');
+  var defaultEl = document.getElementById('donutDefault');
+  var hoverEl = document.getElementById('donutHover');
+  var nameEl = document.getElementById('donutAreaName');
+  var descEl = document.getElementById('donutAreaDesc');
+  var ns = 'http://www.w3.org/2000/svg';
+  function rad(d) { return d * Math.PI / 180; }
+  function f(n) { return Math.round(n * 100) / 100; }
+  function ptx(r, deg) { return cx + r * Math.cos(rad(deg)); }
+  function pty(r, deg) { return cy + r * Math.sin(rad(deg)); }
+  var paths = [];
+  var legendItems = [];
+  areas.forEach(function(area, i) {
+    var a1 = -90 + i * 36 + gap;
+    var a2 = -90 + (i + 1) * 36 - gap;
+    var mid = (a1 + a2) / 2;
+    var d = 'M ' + f(ptx(OR,a1)) + ' ' + f(pty(OR,a1)) +
+            ' A ' + OR + ' ' + OR + ' 0 0 1 ' + f(ptx(OR,a2)) + ' ' + f(pty(OR,a2)) +
+            ' L ' + f(ptx(IR,a2)) + ' ' + f(pty(IR,a2)) +
+            ' A ' + IR + ' ' + IR + ' 0 0 0 ' + f(ptx(IR,a1)) + ' ' + f(pty(IR,a1)) + ' Z';
+    var tx = f(22 * Math.cos(rad(mid)));
+    var ty = f(22 * Math.sin(rad(mid)));
+    var path = document.createElementNS(ns, 'path');
+    path.setAttribute('d', d);
+    path.setAttribute('fill', area.color);
+    path.setAttribute('stroke', '#0A170E');
+    path.setAttribute('stroke-width', '2');
+    path.style.cursor = 'pointer';
+    path.style.transition = 'transform 0.3s cubic-bezier(0.16,1,0.3,1)';
+    (function(p, a, tx2, ty2, idx) {
+      p.addEventListener('mouseenter', function() {
+        p.style.transform = 'translate(' + tx2 + 'px,' + ty2 + 'px)';
+        p.setAttribute('fill', '#C9A84E');
+        defaultEl.style.display = 'none';
+        hoverEl.style.display = 'flex';
+        nameEl.textContent = a.name;
+        descEl.textContent = a.desc;
+        if (legendItems[idx]) legendItems[idx].classList.add('legend-active');
+      });
+      p.addEventListener('mouseleave', function() {
+        p.style.transform = 'translate(0,0)';
+        p.setAttribute('fill', a.color);
+        defaultEl.style.display = 'flex';
+        hoverEl.style.display = 'none';
+        if (legendItems[idx]) legendItems[idx].classList.remove('legend-active');
+      });
+    })(path, area, tx, ty, i);
+    svg.appendChild(path);
+    paths.push(path);
+  });
+  areas.forEach(function(area, i) {
+    var item = document.createElement('div');
+    item.className = 'legend-item';
+    var dot = document.createElement('span');
+    dot.className = 'legend-dot';
+    dot.style.background = area.color;
+    var lbl = document.createElement('span');
+    lbl.className = 'legend-label';
+    lbl.textContent = area.name;
+    item.appendChild(dot);
+    item.appendChild(lbl);
+    (function(it, idx) {
+      it.addEventListener('mouseenter', function() { if (paths[idx]) paths[idx].dispatchEvent(new MouseEvent('mouseenter')); });
+      it.addEventListener('mouseleave', function() { if (paths[idx]) paths[idx].dispatchEvent(new MouseEvent('mouseleave')); });
+    })(item, i);
+    legend.appendChild(item);
+    legendItems.push(item);
+  });
+})();
+</script>
 <!-- MEDIATION -->
 <section class="mediation" id="mediation">
   <div class="mediation-bg"></div>
@@ -1505,83 +1664,45 @@ footer {
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="wrap">
-    <h2 class="reveal">Get in Touch</h2>
-    <p class="reveal reveal-d1" style="color:var(--text-secondary); max-width:480px; margin-bottom:48px;">Ready to discuss your legal matter? Contact Sharp Law Firm to schedule a consultation.</p>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="contact-item reveal">
-          <div class="contact-item-icon">
-            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    <div class="contact-grid-simple">
+      <div class="contact-left">
+        <h2 class="reveal">Get in Touch</h2>
+        <p class="reveal reveal-d1" style="color:var(--text-secondary); margin-bottom:36px; max-width:420px;">Ready to discuss your legal matter? Contact Sharp Law Firm to schedule a consultation.</p>
+        <div class="contact-info">
+          <div class="contact-item reveal">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Phone</div>
+              <div class="contact-item-value"><a href="tel:8435249850">843.524.9850</a></div>
+            </div>
           </div>
-          <div>
-            <div class="contact-item-label">Phone</div>
-            <div class="contact-item-value"><a href="tel:8435249850">843.524.9850</a></div>
+          <div class="contact-item reveal reveal-d1">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Office</div>
+              <div class="contact-item-value">1609 North Street<br>PO Box 1589<br>Beaufort, SC 29901</div>
+            </div>
           </div>
-        </div>
-        <div class="contact-item reveal reveal-d1">
-          <div class="contact-item-icon">
-            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div>
-            <div class="contact-item-label">Office</div>
-            <div class="contact-item-value">1609 North Street<br>PO Box 1589<br>Beaufort, SC 29901</div>
-          </div>
-        </div>
-        <div class="contact-item reveal reveal-d2">
-          <div class="contact-item-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          </div>
-          <div>
-            <div class="contact-item-label">Availability</div>
-            <div class="contact-item-value">Monday - Friday<br>By appointment</div>
+          <div class="contact-item reveal reveal-d2">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Availability</div>
+              <div class="contact-item-value">Monday - Friday<br>By appointment</div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="contact-form-wrap reveal reveal-d1">
-        <h3 class="contact-form-title">Send a Message</h3>
-        <form class="contact-form" onsubmit="return false;">
-          <div class="form-group">
-            <label for="cf-name">Full Name</label>
-            <input type="text" id="cf-name" placeholder="Jane Smith">
-          </div>
-          <div class="form-group">
-            <label for="cf-email">Email Address</label>
-            <input type="email" id="cf-email" placeholder="jane@example.com">
-          </div>
-          <div class="form-group">
-            <label for="cf-phone">Phone Number</label>
-            <input type="tel" id="cf-phone" placeholder="(843) 555-0000">
-          </div>
-          <div class="form-group">
-            <label for="cf-matter">Type of Matter</label>
-            <select id="cf-matter">
-              <option value="">Select a practice area...</option>
-              <option>Personal Injury</option>
-              <option>Commercial Litigation</option>
-              <option>Insurance Coverage</option>
-              <option>Commercial Trucking</option>
-              <option>Construction Litigation</option>
-              <option>HOA / Community Law</option>
-              <option>Premises Liability</option>
-              <option>Mediation</option>
-              <option>Appellate</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="cf-message">Brief Description</label>
-            <textarea id="cf-message" rows="4" placeholder="Briefly describe your legal matter..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;">Send Message</button>
-          <p class="form-disclaimer">Submitting this form does not create an attorney-client relationship.</p>
-        </form>
-      </div>
-      <div class="contact-office-photo reveal"><img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&h=300&q=80&auto=format&fit=crop" alt="Historic downtown Beaufort, South Carolina" loading="lazy"><div class="contact-office-label">Beaufort, South Carolina</div></div>
       <div class="contact-map reveal">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.1!2d-80.6698!3d32.4316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fc1a3b3b3b3b3b%3A0x0!2s1609+North+St%2C+Beaufort%2C+SC+29901!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
           width="100%" height="100%"
-          style="border:0; position:absolute; inset:0; width:100%; height:100%;"
+          style="border:0; width:100%; height:100%; display:block;"
           allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Sharp Law Firm location - 1609 North Street, Beaufort SC">
@@ -1590,7 +1711,6 @@ footer {
     </div>
   </div>
 </section>
-
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
